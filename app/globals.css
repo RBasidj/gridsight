@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-paper text-ink antialiased;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Hairline worksheet card. Squared, not glassy. */
+.sheet {
+  @apply border border-rule bg-paper-raised;
+}
+
+.rule-t {
+  @apply border-t border-rule;
+}
+
+/* Section label above blocks of content. */
+.eyebrow {
+  @apply font-mono text-[11px] uppercase tracking-[0.14em] text-ink-faint;
+}
+
+/* Range slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: #c3b9a4;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 14px;
+  width: 14px;
+  background: #1f5c3d;
+  border: 2px solid #f4f1ea;
+}
+input[type="range"]::-moz-range-thumb {
+  height: 14px;
+  width: 14px;
+  border-radius: 0;
+  background: #1f5c3d;
+  border: 2px solid #f4f1ea;
+}
+
+/* MapLibre popup, matched to paper */
+.maplibregl-popup-content {
+  background: #faf8f3 !important;
+  color: #211d17 !important;
+  border: 1px solid #c3b9a4;
+  border-radius: 0 !important;
+  padding: 8px 10px !important;
+  font-size: 12px;
+  box-shadow: 2px 2px 0 rgba(33, 29, 23, 0.12) !important;
+}
+.maplibregl-popup-tip {
+  border-top-color: #faf8f3 !important;
+  border-bottom-color: #faf8f3 !important;
+}
+.maplibregl-ctrl-attrib {
+  font-size: 9px;
+  opacity: 0.55;
+}
+.maplibregl-ctrl-group {
+  border-radius: 0 !important;
+}
