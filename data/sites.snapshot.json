@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-07-17T18:59:31.267Z",
-  "count": 20,
+  "generatedAt": "2026-07-17T20:15:16.203Z",
+  "count": 33,
   "provenanceCounts": {
-    "measured": 93,
-    "derived": 100,
-    "estimated": 224,
-    "regional": 83
+    "measured": 158,
+    "derived": 165,
+    "estimated": 366,
+    "regional": 136
   },
   "sites": [
     {
@@ -43,7 +43,7 @@
       "trades_availability": "high",
       "distance_to_labor_market_km": 33,
       "est_build_months": 30,
-      "data_note": "Adjacent to NYPA St. Lawrence-FDR hydro and former Alcoa works; cheap firm hydro power, cold climate.",
+      "data_note": "Adjacent to NYPA St. Lawrence-FDR hydro and former Alcoa works; low-cost firm hydro power and a cold climate.",
       "provenance": {
         "distance_to_substation_km": "measured",
         "wet_bulb_temp_avg_c": "derived",
@@ -1379,6 +1379,554 @@
       "composite": 75
     },
     {
+      "id": "ny-erie-lackawanna",
+      "name": "Bethlehem Steel Brownfield",
+      "state": "NY",
+      "county": "Erie",
+      "lat": 42.8006,
+      "lng": -78.8256,
+      "iso": "NYISO",
+      "acreage": 346,
+      "price_per_acre": 11907,
+      "zoning": "heavy_industrial",
+      "geotech": "good",
+      "distance_to_substation_km": 0.6,
+      "substation_headroom_mw": 112,
+      "interconnection_queue_status": "NYISO: Class Year study cycle, longer queue",
+      "interconnection_queue_wait_years": 4.4,
+      "power_cost_per_mwh": 43,
+      "feed_redundancy": false,
+      "distance_to_fiber_km": 2.9,
+      "distance_to_ix_km": 3,
+      "latency_tier": 1,
+      "wet_bulb_temp_avg_c": 17.2,
+      "ambient_temp_avg_c": 10.4,
+      "water_availability": "high",
+      "seismic_risk_tier": "low",
+      "flood_zone": "X",
+      "wildfire_risk": "very_low",
+      "hurricane_exposure": "very_low",
+      "opportunity_zone": false,
+      "dc_tax_program": "under_review",
+      "local_abatement": "likely",
+      "incentive_notes": "NY §1115(a)(37) internet-data-center sales-tax exemption currently applies but faces proposed repeal (S9288, Feb 2026), so treat it as under legislative review.",
+      "trades_availability": "high",
+      "distance_to_labor_market_km": 8,
+      "est_build_months": 31,
+      "data_note": "Former Bethlehem Steel works on Lake Erie; brownfield with retained heavy power service.",
+      "provenance": {
+        "distance_to_substation_km": "measured",
+        "wet_bulb_temp_avg_c": "derived",
+        "ambient_temp_avg_c": "derived",
+        "seismic_risk_tier": "measured",
+        "flood_zone": "measured",
+        "distance_to_ix_km": "measured",
+        "opportunity_zone": "measured",
+        "power_cost_per_mwh": "regional",
+        "interconnection_queue_wait_years": "regional",
+        "substation_headroom_mw": "estimated",
+        "feed_redundancy": "estimated",
+        "distance_to_fiber_km": "estimated",
+        "latency_tier": "derived",
+        "water_availability": "estimated",
+        "wildfire_risk": "estimated",
+        "hurricane_exposure": "derived",
+        "dc_tax_program": "regional",
+        "local_abatement": "estimated",
+        "trades_availability": "estimated",
+        "distance_to_labor_market_km": "derived",
+        "est_build_months": "estimated",
+        "acreage": "estimated",
+        "price_per_acre": "estimated",
+        "zoning": "regional",
+        "geotech": "estimated"
+      },
+      "sources": [
+        "Substation: HIFLD national substations (ArcGIS)",
+        "Climate: Open-Meteo archive (2023) → Stull wet-bulb",
+        "Seismic: USGS Design Maps ASCE 7-16 (SDS 0.17)",
+        "Flood: FEMA NFHL (X (AREA OF MINIMAL FLOOD HAZARD))",
+        "Interconnection: PeeringDB nearest facility",
+        "Opportunity Zone: HUD Opportunity Zones (ArcGIS)"
+      ],
+      "categories": [
+        {
+          "key": "power",
+          "label": "Power & Interconnection",
+          "score": 49,
+          "subs": [
+            {
+              "label": "Distance to substation",
+              "raw": "0.6 km",
+              "normalized": 98,
+              "weight": 0.3
+            },
+            {
+              "label": "Substation headroom",
+              "raw": "112 MW",
+              "normalized": 11,
+              "weight": 0.3
+            },
+            {
+              "label": "Interconnection queue wait",
+              "raw": "~4.4 yr (NYISO)",
+              "normalized": 27,
+              "weight": 0.2
+            },
+            {
+              "label": "Energy cost",
+              "raw": "$43/MWh",
+              "normalized": 62,
+              "weight": 0.15
+            },
+            {
+              "label": "Feed redundancy",
+              "raw": "Single feed",
+              "normalized": 40,
+              "weight": 0.05
+            }
+          ]
+        },
+        {
+          "key": "land",
+          "label": "Land",
+          "score": 90,
+          "subs": [
+            {
+              "label": "Acreage vs. footprint",
+              "raw": "346 ac",
+              "normalized": 85,
+              "weight": 0.3
+            },
+            {
+              "label": "Zoning",
+              "raw": "heavy industrial",
+              "normalized": 100,
+              "weight": 0.3
+            },
+            {
+              "label": "Price per acre",
+              "raw": "$11,907",
+              "normalized": 84,
+              "weight": 0.25
+            },
+            {
+              "label": "Geotechnical readiness",
+              "raw": "good",
+              "normalized": 92,
+              "weight": 0.15
+            }
+          ]
+        },
+        {
+          "key": "connectivity",
+          "label": "Connectivity",
+          "score": 96,
+          "subs": [
+            {
+              "label": "Distance to long-haul fiber",
+              "raw": "2.9 km",
+              "normalized": 90,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to internet exchange",
+              "raw": "3 km",
+              "normalized": 99,
+              "weight": 0.3
+            },
+            {
+              "label": "Latency tier to major metro",
+              "raw": "Tier 1",
+              "normalized": 100,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "cooling",
+          "label": "Cooling & Climate",
+          "score": 84,
+          "subs": [
+            {
+              "label": "Avg. wet-bulb temperature",
+              "raw": "17.2 °C",
+              "normalized": 83,
+              "weight": 0.45
+            },
+            {
+              "label": "Avg. ambient temperature",
+              "raw": "10.4 °C",
+              "normalized": 87,
+              "weight": 0.25
+            },
+            {
+              "label": "Makeup-water availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "risk",
+          "label": "Risk",
+          "score": 97,
+          "subs": [
+            {
+              "label": "Seismic hazard",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.2
+            },
+            {
+              "label": "Flood zone",
+              "raw": "X",
+              "normalized": 100,
+              "weight": 0.35
+            },
+            {
+              "label": "Wildfire risk",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Hurricane exposure",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.25
+            }
+          ]
+        },
+        {
+          "key": "incentives",
+          "label": "Incentives",
+          "score": 56,
+          "subs": [
+            {
+              "label": "Opportunity Zone",
+              "raw": "No",
+              "normalized": 40,
+              "weight": 0.25
+            },
+            {
+              "label": "State data-center tax program",
+              "raw": "under review",
+              "normalized": 55,
+              "weight": 0.45
+            },
+            {
+              "label": "Local abatement",
+              "raw": "likely",
+              "normalized": 70,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "labor",
+          "label": "Labor & Construction",
+          "score": 78,
+          "subs": [
+            {
+              "label": "Skilled trades availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to labor market",
+              "raw": "8 km",
+              "normalized": 93,
+              "weight": 0.3
+            },
+            {
+              "label": "Est. build timeline",
+              "raw": "31 mo",
+              "normalized": 57,
+              "weight": 0.3
+            }
+          ]
+        }
+      ],
+      "composite": 74
+    },
+    {
+      "id": "ny-onondaga-clay",
+      "name": "White Pine Commerce Park",
+      "state": "NY",
+      "county": "Onondaga",
+      "lat": 43.1893,
+      "lng": -76.1936,
+      "iso": "NYISO",
+      "acreage": 1400,
+      "price_per_acre": 15985,
+      "zoning": "heavy_industrial",
+      "geotech": "good",
+      "distance_to_substation_km": 2.1,
+      "substation_headroom_mw": 289,
+      "interconnection_queue_status": "NYISO: Class Year study cycle, longer queue",
+      "interconnection_queue_wait_years": 5.4,
+      "power_cost_per_mwh": 48,
+      "feed_redundancy": false,
+      "distance_to_fiber_km": 3.5,
+      "distance_to_ix_km": 16,
+      "latency_tier": 1,
+      "wet_bulb_temp_avg_c": 17.6,
+      "ambient_temp_avg_c": 10.2,
+      "water_availability": "high",
+      "seismic_risk_tier": "very_low",
+      "flood_zone": "X",
+      "wildfire_risk": "very_low",
+      "hurricane_exposure": "very_low",
+      "opportunity_zone": false,
+      "dc_tax_program": "under_review",
+      "local_abatement": "likely",
+      "incentive_notes": "NY §1115(a)(37) internet-data-center sales-tax exemption currently applies but faces proposed repeal (S9288, Feb 2026), so treat it as under legislative review.",
+      "trades_availability": "high",
+      "distance_to_labor_market_km": 13,
+      "est_build_months": 36,
+      "data_note": "Near the Micron program in Clay; large grid buildout underway.",
+      "provenance": {
+        "distance_to_substation_km": "measured",
+        "wet_bulb_temp_avg_c": "derived",
+        "ambient_temp_avg_c": "derived",
+        "seismic_risk_tier": "measured",
+        "flood_zone": "measured",
+        "distance_to_ix_km": "measured",
+        "opportunity_zone": "measured",
+        "power_cost_per_mwh": "regional",
+        "interconnection_queue_wait_years": "regional",
+        "substation_headroom_mw": "estimated",
+        "feed_redundancy": "estimated",
+        "distance_to_fiber_km": "estimated",
+        "latency_tier": "derived",
+        "water_availability": "estimated",
+        "wildfire_risk": "estimated",
+        "hurricane_exposure": "derived",
+        "dc_tax_program": "regional",
+        "local_abatement": "estimated",
+        "trades_availability": "estimated",
+        "distance_to_labor_market_km": "derived",
+        "est_build_months": "estimated",
+        "acreage": "regional",
+        "price_per_acre": "estimated",
+        "zoning": "regional",
+        "geotech": "estimated"
+      },
+      "sources": [
+        "Substation: HIFLD national substations (ArcGIS)",
+        "Climate: Open-Meteo archive (2023) → Stull wet-bulb",
+        "Seismic: USGS Design Maps ASCE 7-16 (SDS 0.155)",
+        "Flood: FEMA NFHL (X (AREA OF MINIMAL FLOOD HAZARD))",
+        "Interconnection: PeeringDB nearest facility",
+        "Opportunity Zone: HUD Opportunity Zones (ArcGIS)"
+      ],
+      "categories": [
+        {
+          "key": "power",
+          "label": "Power & Interconnection",
+          "score": 48,
+          "subs": [
+            {
+              "label": "Distance to substation",
+              "raw": "2.1 km",
+              "normalized": 92,
+              "weight": 0.3
+            },
+            {
+              "label": "Substation headroom",
+              "raw": "289 MW",
+              "normalized": 29,
+              "weight": 0.3
+            },
+            {
+              "label": "Interconnection queue wait",
+              "raw": "~5.4 yr (NYISO)",
+              "normalized": 10,
+              "weight": 0.2
+            },
+            {
+              "label": "Energy cost",
+              "raw": "$48/MWh",
+              "normalized": 53,
+              "weight": 0.15
+            },
+            {
+              "label": "Feed redundancy",
+              "raw": "Single feed",
+              "normalized": 40,
+              "weight": 0.05
+            }
+          ]
+        },
+        {
+          "key": "land",
+          "label": "Land",
+          "score": 93,
+          "subs": [
+            {
+              "label": "Acreage vs. footprint",
+              "raw": "1,400 ac",
+              "normalized": 100,
+              "weight": 0.3
+            },
+            {
+              "label": "Zoning",
+              "raw": "heavy industrial",
+              "normalized": 100,
+              "weight": 0.3
+            },
+            {
+              "label": "Price per acre",
+              "raw": "$15,985",
+              "normalized": 77,
+              "weight": 0.25
+            },
+            {
+              "label": "Geotechnical readiness",
+              "raw": "good",
+              "normalized": 92,
+              "weight": 0.15
+            }
+          ]
+        },
+        {
+          "key": "connectivity",
+          "label": "Connectivity",
+          "score": 94,
+          "subs": [
+            {
+              "label": "Distance to long-haul fiber",
+              "raw": "3.5 km",
+              "normalized": 88,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to internet exchange",
+              "raw": "16 km",
+              "normalized": 96,
+              "weight": 0.3
+            },
+            {
+              "label": "Latency tier to major metro",
+              "raw": "Tier 1",
+              "normalized": 100,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "cooling",
+          "label": "Cooling & Climate",
+          "score": 83,
+          "subs": [
+            {
+              "label": "Avg. wet-bulb temperature",
+              "raw": "17.6 °C",
+              "normalized": 80,
+              "weight": 0.45
+            },
+            {
+              "label": "Avg. ambient temperature",
+              "raw": "10.2 °C",
+              "normalized": 88,
+              "weight": 0.25
+            },
+            {
+              "label": "Makeup-water availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "risk",
+          "label": "Risk",
+          "score": 100,
+          "subs": [
+            {
+              "label": "Seismic hazard",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Flood zone",
+              "raw": "X",
+              "normalized": 100,
+              "weight": 0.35
+            },
+            {
+              "label": "Wildfire risk",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Hurricane exposure",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.25
+            }
+          ]
+        },
+        {
+          "key": "incentives",
+          "label": "Incentives",
+          "score": 56,
+          "subs": [
+            {
+              "label": "Opportunity Zone",
+              "raw": "No",
+              "normalized": 40,
+              "weight": 0.25
+            },
+            {
+              "label": "State data-center tax program",
+              "raw": "under review",
+              "normalized": 55,
+              "weight": 0.45
+            },
+            {
+              "label": "Local abatement",
+              "raw": "likely",
+              "normalized": 70,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "labor",
+          "label": "Labor & Construction",
+          "score": 72,
+          "subs": [
+            {
+              "label": "Skilled trades availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to labor market",
+              "raw": "13 km",
+              "normalized": 89,
+              "weight": 0.3
+            },
+            {
+              "label": "Est. build timeline",
+              "raw": "36 mo",
+              "normalized": 40,
+              "weight": 0.3
+            }
+          ]
+        }
+      ],
+      "composite": 73
+    },
+    {
       "id": "ny-niagara-falls",
       "name": "Niagara Power Reach",
       "state": "NY",
@@ -1403,7 +1951,7 @@
       "ambient_temp_avg_c": 10.4,
       "water_availability": "abundant",
       "seismic_risk_tier": "low",
-      "flood_zone": "X",
+      "flood_zone": "ae",
       "wildfire_risk": "very_low",
       "hurricane_exposure": "very_low",
       "opportunity_zone": false,
@@ -1413,13 +1961,13 @@
       "trades_availability": "high",
       "distance_to_labor_market_km": 18,
       "est_build_months": 37,
-      "data_note": "Fed by NYPA Niagara hydro, some of the lowest-cost power in the eastern US.",
+      "data_note": "Fed by NYPA Niagara hydro, a low-cost power source.",
       "provenance": {
         "distance_to_substation_km": "measured",
         "wet_bulb_temp_avg_c": "derived",
         "ambient_temp_avg_c": "derived",
         "seismic_risk_tier": "measured",
-        "flood_zone": "estimated",
+        "flood_zone": "measured",
         "distance_to_ix_km": "measured",
         "opportunity_zone": "measured",
         "power_cost_per_mwh": "regional",
@@ -1445,7 +1993,7 @@
         "Substation: HIFLD national substations (ArcGIS)",
         "Climate: Open-Meteo archive (2023) → Stull wet-bulb",
         "Seismic: USGS Design Maps ASCE 7-16 (SDS 0.168)",
-        "Flood: unmapped/minimal",
+        "Flood: FEMA NFHL (AE (FLOODWAY))",
         "Interconnection: PeeringDB nearest facility",
         "Opportunity Zone: HUD Opportunity Zones (ArcGIS)"
       ],
@@ -1571,7 +2119,7 @@
         {
           "key": "risk",
           "label": "Risk",
-          "score": 97,
+          "score": 77,
           "subs": [
             {
               "label": "Seismic hazard",
@@ -1581,8 +2129,8 @@
             },
             {
               "label": "Flood zone",
-              "raw": "X",
-              "normalized": 100,
+              "raw": "AE",
+              "normalized": 42,
               "weight": 0.35
             },
             {
@@ -1650,7 +2198,7 @@
           ]
         }
       ],
-      "composite": 74
+      "composite": 72
     },
     {
       "id": "ny-montgomery-amsterdam",
@@ -2193,6 +2741,554 @@
               "label": "Est. build timeline",
               "raw": "32 mo",
               "normalized": 53,
+              "weight": 0.3
+            }
+          ]
+        }
+      ],
+      "composite": 72
+    },
+    {
+      "id": "ny-monroe-rochester",
+      "name": "Eastman Business Park",
+      "state": "NY",
+      "county": "Monroe",
+      "lat": 43.1487,
+      "lng": -77.6799,
+      "iso": "NYISO",
+      "acreage": 228,
+      "price_per_acre": 8280,
+      "zoning": "industrial",
+      "geotech": "good",
+      "distance_to_substation_km": 0.9,
+      "substation_headroom_mw": 189,
+      "interconnection_queue_status": "NYISO: Class Year study cycle, longer queue",
+      "interconnection_queue_wait_years": 4.8,
+      "power_cost_per_mwh": 45,
+      "feed_redundancy": false,
+      "distance_to_fiber_km": 1,
+      "distance_to_ix_km": 2,
+      "latency_tier": 1,
+      "wet_bulb_temp_avg_c": 17,
+      "ambient_temp_avg_c": 10.2,
+      "water_availability": "high",
+      "seismic_risk_tier": "low",
+      "flood_zone": "X",
+      "wildfire_risk": "very_low",
+      "hurricane_exposure": "very_low",
+      "opportunity_zone": false,
+      "dc_tax_program": "under_review",
+      "local_abatement": "likely",
+      "incentive_notes": "NY §1115(a)(37) internet-data-center sales-tax exemption currently applies but faces proposed repeal (S9288, Feb 2026), so treat it as under legislative review.",
+      "trades_availability": "high",
+      "distance_to_labor_market_km": 3,
+      "est_build_months": 33,
+      "data_note": "Legacy Kodak industrial campus in Rochester with on-site utilities.",
+      "provenance": {
+        "distance_to_substation_km": "measured",
+        "wet_bulb_temp_avg_c": "derived",
+        "ambient_temp_avg_c": "derived",
+        "seismic_risk_tier": "measured",
+        "flood_zone": "measured",
+        "distance_to_ix_km": "measured",
+        "opportunity_zone": "measured",
+        "power_cost_per_mwh": "regional",
+        "interconnection_queue_wait_years": "regional",
+        "substation_headroom_mw": "estimated",
+        "feed_redundancy": "estimated",
+        "distance_to_fiber_km": "estimated",
+        "latency_tier": "derived",
+        "water_availability": "estimated",
+        "wildfire_risk": "estimated",
+        "hurricane_exposure": "derived",
+        "dc_tax_program": "regional",
+        "local_abatement": "estimated",
+        "trades_availability": "estimated",
+        "distance_to_labor_market_km": "derived",
+        "est_build_months": "estimated",
+        "acreage": "estimated",
+        "price_per_acre": "estimated",
+        "zoning": "regional",
+        "geotech": "estimated"
+      },
+      "sources": [
+        "Substation: HIFLD national substations (ArcGIS)",
+        "Climate: Open-Meteo archive (2023) → Stull wet-bulb",
+        "Seismic: USGS Design Maps ASCE 7-16 (SDS 0.174)",
+        "Flood: FEMA NFHL (X (AREA OF MINIMAL FLOOD HAZARD))",
+        "Interconnection: PeeringDB nearest facility",
+        "Opportunity Zone: HUD Opportunity Zones (ArcGIS)"
+      ],
+      "categories": [
+        {
+          "key": "power",
+          "label": "Power & Interconnection",
+          "score": 49,
+          "subs": [
+            {
+              "label": "Distance to substation",
+              "raw": "0.9 km",
+              "normalized": 96,
+              "weight": 0.3
+            },
+            {
+              "label": "Substation headroom",
+              "raw": "189 MW",
+              "normalized": 19,
+              "weight": 0.3
+            },
+            {
+              "label": "Interconnection queue wait",
+              "raw": "~4.8 yr (NYISO)",
+              "normalized": 20,
+              "weight": 0.2
+            },
+            {
+              "label": "Energy cost",
+              "raw": "$45/MWh",
+              "normalized": 58,
+              "weight": 0.15
+            },
+            {
+              "label": "Feed redundancy",
+              "raw": "Single feed",
+              "normalized": 40,
+              "weight": 0.05
+            }
+          ]
+        },
+        {
+          "key": "land",
+          "label": "Land",
+          "score": 77,
+          "subs": [
+            {
+              "label": "Acreage vs. footprint",
+              "raw": "228 ac",
+              "normalized": 51,
+              "weight": 0.3
+            },
+            {
+              "label": "Zoning",
+              "raw": "industrial",
+              "normalized": 85,
+              "weight": 0.3
+            },
+            {
+              "label": "Price per acre",
+              "raw": "$8,280",
+              "normalized": 91,
+              "weight": 0.25
+            },
+            {
+              "label": "Geotechnical readiness",
+              "raw": "good",
+              "normalized": 92,
+              "weight": 0.15
+            }
+          ]
+        },
+        {
+          "key": "connectivity",
+          "label": "Connectivity",
+          "score": 99,
+          "subs": [
+            {
+              "label": "Distance to long-haul fiber",
+              "raw": "1.0 km",
+              "normalized": 97,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to internet exchange",
+              "raw": "2 km",
+              "normalized": 100,
+              "weight": 0.3
+            },
+            {
+              "label": "Latency tier to major metro",
+              "raw": "Tier 1",
+              "normalized": 100,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "cooling",
+          "label": "Cooling & Climate",
+          "score": 85,
+          "subs": [
+            {
+              "label": "Avg. wet-bulb temperature",
+              "raw": "17.0 °C",
+              "normalized": 85,
+              "weight": 0.45
+            },
+            {
+              "label": "Avg. ambient temperature",
+              "raw": "10.2 °C",
+              "normalized": 88,
+              "weight": 0.25
+            },
+            {
+              "label": "Makeup-water availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "risk",
+          "label": "Risk",
+          "score": 97,
+          "subs": [
+            {
+              "label": "Seismic hazard",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.2
+            },
+            {
+              "label": "Flood zone",
+              "raw": "X",
+              "normalized": 100,
+              "weight": 0.35
+            },
+            {
+              "label": "Wildfire risk",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Hurricane exposure",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.25
+            }
+          ]
+        },
+        {
+          "key": "incentives",
+          "label": "Incentives",
+          "score": 56,
+          "subs": [
+            {
+              "label": "Opportunity Zone",
+              "raw": "No",
+              "normalized": 40,
+              "weight": 0.25
+            },
+            {
+              "label": "State data-center tax program",
+              "raw": "under review",
+              "normalized": 55,
+              "weight": 0.45
+            },
+            {
+              "label": "Local abatement",
+              "raw": "likely",
+              "normalized": 70,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "labor",
+          "label": "Labor & Construction",
+          "score": 77,
+          "subs": [
+            {
+              "label": "Skilled trades availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to labor market",
+              "raw": "3 km",
+              "normalized": 98,
+              "weight": 0.3
+            },
+            {
+              "label": "Est. build timeline",
+              "raw": "33 mo",
+              "normalized": 50,
+              "weight": 0.3
+            }
+          ]
+        }
+      ],
+      "composite": 72
+    },
+    {
+      "id": "ny-dutchess-poughkeepsie",
+      "name": "Dutchess Tech Campus",
+      "state": "NY",
+      "county": "Dutchess",
+      "lat": 41.7004,
+      "lng": -73.921,
+      "iso": "NYISO",
+      "acreage": 209,
+      "price_per_acre": 8570,
+      "zoning": "industrial",
+      "geotech": "good",
+      "distance_to_substation_km": 1.9,
+      "substation_headroom_mw": 201,
+      "interconnection_queue_status": "NYISO: Class Year study cycle, longer queue",
+      "interconnection_queue_wait_years": 4.9,
+      "power_cost_per_mwh": 45,
+      "feed_redundancy": false,
+      "distance_to_fiber_km": 1.9,
+      "distance_to_ix_km": 12,
+      "latency_tier": 1,
+      "wet_bulb_temp_avg_c": 18.3,
+      "ambient_temp_avg_c": 11.4,
+      "water_availability": "high",
+      "seismic_risk_tier": "low",
+      "flood_zone": "X",
+      "wildfire_risk": "very_low",
+      "hurricane_exposure": "very_low",
+      "opportunity_zone": true,
+      "dc_tax_program": "under_review",
+      "local_abatement": "likely",
+      "incentive_notes": "NY §1115(a)(37) internet-data-center sales-tax exemption currently applies but faces proposed repeal (S9288, Feb 2026), so treat it as under legislative review.",
+      "trades_availability": "high",
+      "distance_to_labor_market_km": 8,
+      "est_build_months": 33,
+      "data_note": "Longtime IBM campus area with established power and technical labor.",
+      "provenance": {
+        "distance_to_substation_km": "measured",
+        "wet_bulb_temp_avg_c": "derived",
+        "ambient_temp_avg_c": "derived",
+        "seismic_risk_tier": "measured",
+        "flood_zone": "measured",
+        "distance_to_ix_km": "measured",
+        "opportunity_zone": "measured",
+        "power_cost_per_mwh": "regional",
+        "interconnection_queue_wait_years": "regional",
+        "substation_headroom_mw": "estimated",
+        "feed_redundancy": "estimated",
+        "distance_to_fiber_km": "estimated",
+        "latency_tier": "derived",
+        "water_availability": "estimated",
+        "wildfire_risk": "estimated",
+        "hurricane_exposure": "derived",
+        "dc_tax_program": "regional",
+        "local_abatement": "estimated",
+        "trades_availability": "estimated",
+        "distance_to_labor_market_km": "derived",
+        "est_build_months": "estimated",
+        "acreage": "estimated",
+        "price_per_acre": "estimated",
+        "zoning": "regional",
+        "geotech": "estimated"
+      },
+      "sources": [
+        "Substation: HIFLD national substations (ArcGIS)",
+        "Climate: Open-Meteo archive (2023) → Stull wet-bulb",
+        "Seismic: USGS Design Maps ASCE 7-16 (SDS 0.207)",
+        "Flood: FEMA NFHL (X (AREA OF MINIMAL FLOOD HAZARD))",
+        "Interconnection: PeeringDB nearest facility",
+        "Opportunity Zone: HUD Opportunity Zones (ArcGIS)"
+      ],
+      "categories": [
+        {
+          "key": "power",
+          "label": "Power & Interconnection",
+          "score": 48,
+          "subs": [
+            {
+              "label": "Distance to substation",
+              "raw": "1.9 km",
+              "normalized": 92,
+              "weight": 0.3
+            },
+            {
+              "label": "Substation headroom",
+              "raw": "201 MW",
+              "normalized": 20,
+              "weight": 0.3
+            },
+            {
+              "label": "Interconnection queue wait",
+              "raw": "~4.9 yr (NYISO)",
+              "normalized": 18,
+              "weight": 0.2
+            },
+            {
+              "label": "Energy cost",
+              "raw": "$45/MWh",
+              "normalized": 58,
+              "weight": 0.15
+            },
+            {
+              "label": "Feed redundancy",
+              "raw": "Single feed",
+              "normalized": 40,
+              "weight": 0.05
+            }
+          ]
+        },
+        {
+          "key": "land",
+          "label": "Land",
+          "score": 75,
+          "subs": [
+            {
+              "label": "Acreage vs. footprint",
+              "raw": "209 ac",
+              "normalized": 45,
+              "weight": 0.3
+            },
+            {
+              "label": "Zoning",
+              "raw": "industrial",
+              "normalized": 85,
+              "weight": 0.3
+            },
+            {
+              "label": "Price per acre",
+              "raw": "$8,570",
+              "normalized": 90,
+              "weight": 0.25
+            },
+            {
+              "label": "Geotechnical readiness",
+              "raw": "good",
+              "normalized": 92,
+              "weight": 0.15
+            }
+          ]
+        },
+        {
+          "key": "connectivity",
+          "label": "Connectivity",
+          "score": 97,
+          "subs": [
+            {
+              "label": "Distance to long-haul fiber",
+              "raw": "1.9 km",
+              "normalized": 94,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to internet exchange",
+              "raw": "12 km",
+              "normalized": 97,
+              "weight": 0.3
+            },
+            {
+              "label": "Latency tier to major metro",
+              "raw": "Tier 1",
+              "normalized": 100,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "cooling",
+          "label": "Cooling & Climate",
+          "score": 79,
+          "subs": [
+            {
+              "label": "Avg. wet-bulb temperature",
+              "raw": "18.3 °C",
+              "normalized": 75,
+              "weight": 0.45
+            },
+            {
+              "label": "Avg. ambient temperature",
+              "raw": "11.4 °C",
+              "normalized": 81,
+              "weight": 0.25
+            },
+            {
+              "label": "Makeup-water availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "risk",
+          "label": "Risk",
+          "score": 97,
+          "subs": [
+            {
+              "label": "Seismic hazard",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.2
+            },
+            {
+              "label": "Flood zone",
+              "raw": "X",
+              "normalized": 100,
+              "weight": 0.35
+            },
+            {
+              "label": "Wildfire risk",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Hurricane exposure",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.25
+            }
+          ]
+        },
+        {
+          "key": "incentives",
+          "label": "Incentives",
+          "score": 71,
+          "subs": [
+            {
+              "label": "Opportunity Zone",
+              "raw": "Yes",
+              "normalized": 100,
+              "weight": 0.25
+            },
+            {
+              "label": "State data-center tax program",
+              "raw": "under review",
+              "normalized": 55,
+              "weight": 0.45
+            },
+            {
+              "label": "Local abatement",
+              "raw": "likely",
+              "normalized": 70,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "labor",
+          "label": "Labor & Construction",
+          "score": 76,
+          "subs": [
+            {
+              "label": "Skilled trades availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to labor market",
+              "raw": "8 km",
+              "normalized": 93,
+              "weight": 0.3
+            },
+            {
+              "label": "Est. build timeline",
+              "raw": "33 mo",
+              "normalized": 50,
               "weight": 0.3
             }
           ]
@@ -2749,6 +3845,280 @@
       "composite": 71
     },
     {
+      "id": "ny-saratoga-malta",
+      "name": "Luther Forest Tract",
+      "state": "NY",
+      "county": "Saratoga",
+      "lat": 42.9834,
+      "lng": -73.7907,
+      "iso": "NYISO",
+      "acreage": 289,
+      "price_per_acre": 12772,
+      "zoning": "heavy_industrial",
+      "geotech": "good",
+      "distance_to_substation_km": 2.2,
+      "substation_headroom_mw": 149,
+      "interconnection_queue_status": "NYISO: Class Year study cycle, longer queue",
+      "interconnection_queue_wait_years": 4.6,
+      "power_cost_per_mwh": 44,
+      "feed_redundancy": false,
+      "distance_to_fiber_km": 4.9,
+      "distance_to_ix_km": 27,
+      "latency_tier": 1,
+      "wet_bulb_temp_avg_c": 17.8,
+      "ambient_temp_avg_c": 10.3,
+      "water_availability": "high",
+      "seismic_risk_tier": "low",
+      "flood_zone": "X",
+      "wildfire_risk": "very_low",
+      "hurricane_exposure": "very_low",
+      "opportunity_zone": false,
+      "dc_tax_program": "under_review",
+      "local_abatement": "likely",
+      "incentive_notes": "NY §1115(a)(37) internet-data-center sales-tax exemption currently applies but faces proposed repeal (S9288, Feb 2026), so treat it as under legislative review.",
+      "trades_availability": "high",
+      "distance_to_labor_market_km": 19,
+      "est_build_months": 32,
+      "data_note": "GlobalFoundries fab corridor; existing high-capacity power and water.",
+      "provenance": {
+        "distance_to_substation_km": "measured",
+        "wet_bulb_temp_avg_c": "derived",
+        "ambient_temp_avg_c": "derived",
+        "seismic_risk_tier": "measured",
+        "flood_zone": "estimated",
+        "distance_to_ix_km": "measured",
+        "opportunity_zone": "measured",
+        "power_cost_per_mwh": "regional",
+        "interconnection_queue_wait_years": "regional",
+        "substation_headroom_mw": "estimated",
+        "feed_redundancy": "estimated",
+        "distance_to_fiber_km": "estimated",
+        "latency_tier": "derived",
+        "water_availability": "estimated",
+        "wildfire_risk": "estimated",
+        "hurricane_exposure": "derived",
+        "dc_tax_program": "regional",
+        "local_abatement": "estimated",
+        "trades_availability": "estimated",
+        "distance_to_labor_market_km": "derived",
+        "est_build_months": "estimated",
+        "acreage": "estimated",
+        "price_per_acre": "estimated",
+        "zoning": "regional",
+        "geotech": "estimated"
+      },
+      "sources": [
+        "Substation: HIFLD national substations (ArcGIS)",
+        "Climate: Open-Meteo archive (2023) → Stull wet-bulb",
+        "Seismic: USGS Design Maps ASCE 7-16 (SDS 0.222)",
+        "Flood: unmapped/minimal",
+        "Interconnection: PeeringDB nearest facility",
+        "Opportunity Zone: HUD Opportunity Zones (ArcGIS)"
+      ],
+      "categories": [
+        {
+          "key": "power",
+          "label": "Power & Interconnection",
+          "score": 47,
+          "subs": [
+            {
+              "label": "Distance to substation",
+              "raw": "2.2 km",
+              "normalized": 91,
+              "weight": 0.3
+            },
+            {
+              "label": "Substation headroom",
+              "raw": "149 MW",
+              "normalized": 15,
+              "weight": 0.3
+            },
+            {
+              "label": "Interconnection queue wait",
+              "raw": "~4.6 yr (NYISO)",
+              "normalized": 23,
+              "weight": 0.2
+            },
+            {
+              "label": "Energy cost",
+              "raw": "$44/MWh",
+              "normalized": 60,
+              "weight": 0.15
+            },
+            {
+              "label": "Feed redundancy",
+              "raw": "Single feed",
+              "normalized": 40,
+              "weight": 0.05
+            }
+          ]
+        },
+        {
+          "key": "land",
+          "label": "Land",
+          "score": 85,
+          "subs": [
+            {
+              "label": "Acreage vs. footprint",
+              "raw": "289 ac",
+              "normalized": 68,
+              "weight": 0.3
+            },
+            {
+              "label": "Zoning",
+              "raw": "heavy industrial",
+              "normalized": 100,
+              "weight": 0.3
+            },
+            {
+              "label": "Price per acre",
+              "raw": "$12,772",
+              "normalized": 83,
+              "weight": 0.25
+            },
+            {
+              "label": "Geotechnical readiness",
+              "raw": "good",
+              "normalized": 92,
+              "weight": 0.15
+            }
+          ]
+        },
+        {
+          "key": "connectivity",
+          "label": "Connectivity",
+          "score": 92,
+          "subs": [
+            {
+              "label": "Distance to long-haul fiber",
+              "raw": "4.9 km",
+              "normalized": 84,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to internet exchange",
+              "raw": "27 km",
+              "normalized": 93,
+              "weight": 0.3
+            },
+            {
+              "label": "Latency tier to major metro",
+              "raw": "Tier 1",
+              "normalized": 100,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "cooling",
+          "label": "Cooling & Climate",
+          "score": 81,
+          "subs": [
+            {
+              "label": "Avg. wet-bulb temperature",
+              "raw": "17.8 °C",
+              "normalized": 78,
+              "weight": 0.45
+            },
+            {
+              "label": "Avg. ambient temperature",
+              "raw": "10.3 °C",
+              "normalized": 87,
+              "weight": 0.25
+            },
+            {
+              "label": "Makeup-water availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "risk",
+          "label": "Risk",
+          "score": 97,
+          "subs": [
+            {
+              "label": "Seismic hazard",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.2
+            },
+            {
+              "label": "Flood zone",
+              "raw": "X",
+              "normalized": 100,
+              "weight": 0.35
+            },
+            {
+              "label": "Wildfire risk",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Hurricane exposure",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.25
+            }
+          ]
+        },
+        {
+          "key": "incentives",
+          "label": "Incentives",
+          "score": 56,
+          "subs": [
+            {
+              "label": "Opportunity Zone",
+              "raw": "No",
+              "normalized": 40,
+              "weight": 0.25
+            },
+            {
+              "label": "State data-center tax program",
+              "raw": "under review",
+              "normalized": 55,
+              "weight": 0.45
+            },
+            {
+              "label": "Local abatement",
+              "raw": "likely",
+              "normalized": 70,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "labor",
+          "label": "Labor & Construction",
+          "score": 74,
+          "subs": [
+            {
+              "label": "Skilled trades availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to labor market",
+              "raw": "19 km",
+              "normalized": 84,
+              "weight": 0.3
+            },
+            {
+              "label": "Est. build timeline",
+              "raw": "32 mo",
+              "normalized": 53,
+              "weight": 0.3
+            }
+          ]
+        }
+      ],
+      "composite": 71
+    },
+    {
       "id": "tx-tarrant-alliance",
       "name": "AllianceTexas North",
       "state": "TX",
@@ -3015,6 +4385,280 @@
               "label": "Est. build timeline",
               "raw": "37 mo",
               "normalized": 37,
+              "weight": 0.3
+            }
+          ]
+        }
+      ],
+      "composite": 70
+    },
+    {
+      "id": "tx-mclennan-waco",
+      "name": "Waco Interchange",
+      "state": "TX",
+      "county": "McLennan",
+      "lat": 31.5493,
+      "lng": -97.1467,
+      "iso": "ERCOT",
+      "acreage": 296,
+      "price_per_acre": 15736,
+      "zoning": "industrial",
+      "geotech": "good",
+      "distance_to_substation_km": 2.8,
+      "substation_headroom_mw": 295,
+      "interconnection_queue_status": "ERCOT: active interconnection studies, connect-and-manage",
+      "interconnection_queue_wait_years": 2.9,
+      "power_cost_per_mwh": 40,
+      "feed_redundancy": false,
+      "distance_to_fiber_km": 1.9,
+      "distance_to_ix_km": 1,
+      "latency_tier": 1,
+      "wet_bulb_temp_avg_c": 24.1,
+      "ambient_temp_avg_c": 21.5,
+      "water_availability": "moderate",
+      "seismic_risk_tier": "very_low",
+      "flood_zone": "X",
+      "wildfire_risk": "low",
+      "hurricane_exposure": "very_low",
+      "opportunity_zone": false,
+      "dc_tax_program": "eligible_strong",
+      "local_abatement": "likely",
+      "incentive_notes": "TX HB 1223 state sales-tax exemption (10–15 yr) + Chapter 403 / JETI Act property-value limitation (50%, up to 75% in an Opportunity Zone).",
+      "trades_availability": "high",
+      "distance_to_labor_market_km": 5,
+      "est_build_months": 36,
+      "data_note": "I-35 midpoint between DFW and Austin; industrial parks and rail.",
+      "provenance": {
+        "distance_to_substation_km": "measured",
+        "wet_bulb_temp_avg_c": "derived",
+        "ambient_temp_avg_c": "derived",
+        "seismic_risk_tier": "measured",
+        "flood_zone": "measured",
+        "distance_to_ix_km": "measured",
+        "opportunity_zone": "measured",
+        "power_cost_per_mwh": "regional",
+        "interconnection_queue_wait_years": "regional",
+        "substation_headroom_mw": "estimated",
+        "feed_redundancy": "estimated",
+        "distance_to_fiber_km": "estimated",
+        "latency_tier": "derived",
+        "water_availability": "estimated",
+        "wildfire_risk": "estimated",
+        "hurricane_exposure": "derived",
+        "dc_tax_program": "regional",
+        "local_abatement": "estimated",
+        "trades_availability": "estimated",
+        "distance_to_labor_market_km": "derived",
+        "est_build_months": "estimated",
+        "acreage": "estimated",
+        "price_per_acre": "estimated",
+        "zoning": "regional",
+        "geotech": "estimated"
+      },
+      "sources": [
+        "Substation: HIFLD national substations (ArcGIS)",
+        "Climate: Open-Meteo archive (2023) → Stull wet-bulb",
+        "Seismic: USGS Design Maps ASCE 7-16 (SDS 0.07)",
+        "Flood: FEMA NFHL (X (AREA OF MINIMAL FLOOD HAZARD))",
+        "Interconnection: PeeringDB nearest facility",
+        "Opportunity Zone: HUD Opportunity Zones (ArcGIS)"
+      ],
+      "categories": [
+        {
+          "key": "power",
+          "label": "Power & Interconnection",
+          "score": 58,
+          "subs": [
+            {
+              "label": "Distance to substation",
+              "raw": "2.8 km",
+              "normalized": 89,
+              "weight": 0.3
+            },
+            {
+              "label": "Substation headroom",
+              "raw": "295 MW",
+              "normalized": 30,
+              "weight": 0.3
+            },
+            {
+              "label": "Interconnection queue wait",
+              "raw": "~2.9 yr (ERCOT)",
+              "normalized": 52,
+              "weight": 0.2
+            },
+            {
+              "label": "Energy cost",
+              "raw": "$40/MWh",
+              "normalized": 67,
+              "weight": 0.15
+            },
+            {
+              "label": "Feed redundancy",
+              "raw": "Single feed",
+              "normalized": 40,
+              "weight": 0.05
+            }
+          ]
+        },
+        {
+          "key": "land",
+          "label": "Land",
+          "score": 80,
+          "subs": [
+            {
+              "label": "Acreage vs. footprint",
+              "raw": "296 ac",
+              "normalized": 70,
+              "weight": 0.3
+            },
+            {
+              "label": "Zoning",
+              "raw": "industrial",
+              "normalized": 85,
+              "weight": 0.3
+            },
+            {
+              "label": "Price per acre",
+              "raw": "$15,736",
+              "normalized": 78,
+              "weight": 0.25
+            },
+            {
+              "label": "Geotechnical readiness",
+              "raw": "good",
+              "normalized": 92,
+              "weight": 0.15
+            }
+          ]
+        },
+        {
+          "key": "connectivity",
+          "label": "Connectivity",
+          "score": 98,
+          "subs": [
+            {
+              "label": "Distance to long-haul fiber",
+              "raw": "1.9 km",
+              "normalized": 94,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to internet exchange",
+              "raw": "1 km",
+              "normalized": 100,
+              "weight": 0.3
+            },
+            {
+              "label": "Latency tier to major metro",
+              "raw": "Tier 1",
+              "normalized": 100,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "cooling",
+          "label": "Cooling & Climate",
+          "score": 38,
+          "subs": [
+            {
+              "label": "Avg. wet-bulb temperature",
+              "raw": "24.1 °C",
+              "normalized": 30,
+              "weight": 0.45
+            },
+            {
+              "label": "Avg. ambient temperature",
+              "raw": "21.5 °C",
+              "normalized": 25,
+              "weight": 0.25
+            },
+            {
+              "label": "Makeup-water availability",
+              "raw": "moderate",
+              "normalized": 60,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "risk",
+          "label": "Risk",
+          "score": 97,
+          "subs": [
+            {
+              "label": "Seismic hazard",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Flood zone",
+              "raw": "X",
+              "normalized": 100,
+              "weight": 0.35
+            },
+            {
+              "label": "Wildfire risk",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.2
+            },
+            {
+              "label": "Hurricane exposure",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.25
+            }
+          ]
+        },
+        {
+          "key": "incentives",
+          "label": "Incentives",
+          "score": 76,
+          "subs": [
+            {
+              "label": "Opportunity Zone",
+              "raw": "No",
+              "normalized": 40,
+              "weight": 0.25
+            },
+            {
+              "label": "State data-center tax program",
+              "raw": "eligible strong",
+              "normalized": 100,
+              "weight": 0.45
+            },
+            {
+              "label": "Local abatement",
+              "raw": "likely",
+              "normalized": 70,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "labor",
+          "label": "Labor & Construction",
+          "score": 74,
+          "subs": [
+            {
+              "label": "Skilled trades availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to labor market",
+              "raw": "5 km",
+              "normalized": 96,
+              "weight": 0.3
+            },
+            {
+              "label": "Est. build timeline",
+              "raw": "36 mo",
+              "normalized": 40,
               "weight": 0.3
             }
           ]
@@ -3845,6 +5489,554 @@
       "composite": 69
     },
     {
+      "id": "tx-johnson-cleburne",
+      "name": "Cleburne Gas Tract",
+      "state": "TX",
+      "county": "Johnson",
+      "lat": 32.3496,
+      "lng": -97.3861,
+      "iso": "ERCOT",
+      "acreage": 262,
+      "price_per_acre": 12769,
+      "zoning": "industrial",
+      "geotech": "good",
+      "distance_to_substation_km": 0.5,
+      "substation_headroom_mw": 167,
+      "interconnection_queue_status": "ERCOT: active interconnection studies, connect-and-manage",
+      "interconnection_queue_wait_years": 2.2,
+      "power_cost_per_mwh": 36,
+      "feed_redundancy": false,
+      "distance_to_fiber_km": 6.6,
+      "distance_to_ix_km": 45,
+      "latency_tier": 1,
+      "wet_bulb_temp_avg_c": 23.5,
+      "ambient_temp_avg_c": 20.1,
+      "water_availability": "moderate",
+      "seismic_risk_tier": "very_low",
+      "flood_zone": "X",
+      "wildfire_risk": "low",
+      "hurricane_exposure": "very_low",
+      "opportunity_zone": false,
+      "dc_tax_program": "eligible_strong",
+      "local_abatement": "likely",
+      "incentive_notes": "TX HB 1223 state sales-tax exemption (10–15 yr) + Chapter 403 / JETI Act property-value limitation (50%, up to 75% in an Opportunity Zone).",
+      "trades_availability": "high",
+      "distance_to_labor_market_km": 28,
+      "est_build_months": 32,
+      "data_note": "South of Fort Worth in gas country; transmission and open acreage.",
+      "provenance": {
+        "distance_to_substation_km": "measured",
+        "wet_bulb_temp_avg_c": "derived",
+        "ambient_temp_avg_c": "derived",
+        "seismic_risk_tier": "measured",
+        "flood_zone": "measured",
+        "distance_to_ix_km": "measured",
+        "opportunity_zone": "measured",
+        "power_cost_per_mwh": "regional",
+        "interconnection_queue_wait_years": "regional",
+        "substation_headroom_mw": "estimated",
+        "feed_redundancy": "estimated",
+        "distance_to_fiber_km": "estimated",
+        "latency_tier": "derived",
+        "water_availability": "estimated",
+        "wildfire_risk": "estimated",
+        "hurricane_exposure": "derived",
+        "dc_tax_program": "regional",
+        "local_abatement": "estimated",
+        "trades_availability": "estimated",
+        "distance_to_labor_market_km": "derived",
+        "est_build_months": "estimated",
+        "acreage": "estimated",
+        "price_per_acre": "estimated",
+        "zoning": "regional",
+        "geotech": "estimated"
+      },
+      "sources": [
+        "Substation: HIFLD national substations (ArcGIS)",
+        "Climate: Open-Meteo archive (2023) → Stull wet-bulb",
+        "Seismic: USGS Design Maps ASCE 7-16 (SDS 0.083)",
+        "Flood: FEMA NFHL (X (AREA OF MINIMAL FLOOD HAZARD))",
+        "Interconnection: PeeringDB nearest facility",
+        "Opportunity Zone: HUD Opportunity Zones (ArcGIS)"
+      ],
+      "categories": [
+        {
+          "key": "power",
+          "label": "Power & Interconnection",
+          "score": 60,
+          "subs": [
+            {
+              "label": "Distance to substation",
+              "raw": "0.5 km",
+              "normalized": 98,
+              "weight": 0.3
+            },
+            {
+              "label": "Substation headroom",
+              "raw": "167 MW",
+              "normalized": 17,
+              "weight": 0.3
+            },
+            {
+              "label": "Interconnection queue wait",
+              "raw": "~2.2 yr (ERCOT)",
+              "normalized": 63,
+              "weight": 0.2
+            },
+            {
+              "label": "Energy cost",
+              "raw": "$36/MWh",
+              "normalized": 73,
+              "weight": 0.15
+            },
+            {
+              "label": "Feed redundancy",
+              "raw": "Single feed",
+              "normalized": 40,
+              "weight": 0.05
+            }
+          ]
+        },
+        {
+          "key": "land",
+          "label": "Land",
+          "score": 78,
+          "subs": [
+            {
+              "label": "Acreage vs. footprint",
+              "raw": "262 ac",
+              "normalized": 61,
+              "weight": 0.3
+            },
+            {
+              "label": "Zoning",
+              "raw": "industrial",
+              "normalized": 85,
+              "weight": 0.3
+            },
+            {
+              "label": "Price per acre",
+              "raw": "$12,769",
+              "normalized": 83,
+              "weight": 0.25
+            },
+            {
+              "label": "Geotechnical readiness",
+              "raw": "good",
+              "normalized": 92,
+              "weight": 0.15
+            }
+          ]
+        },
+        {
+          "key": "connectivity",
+          "label": "Connectivity",
+          "score": 88,
+          "subs": [
+            {
+              "label": "Distance to long-haul fiber",
+              "raw": "6.6 km",
+              "normalized": 78,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to internet exchange",
+              "raw": "45 km",
+              "normalized": 89,
+              "weight": 0.3
+            },
+            {
+              "label": "Latency tier to major metro",
+              "raw": "Tier 1",
+              "normalized": 100,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "cooling",
+          "label": "Cooling & Climate",
+          "score": 42,
+          "subs": [
+            {
+              "label": "Avg. wet-bulb temperature",
+              "raw": "23.5 °C",
+              "normalized": 35,
+              "weight": 0.45
+            },
+            {
+              "label": "Avg. ambient temperature",
+              "raw": "20.1 °C",
+              "normalized": 33,
+              "weight": 0.25
+            },
+            {
+              "label": "Makeup-water availability",
+              "raw": "moderate",
+              "normalized": 60,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "risk",
+          "label": "Risk",
+          "score": 97,
+          "subs": [
+            {
+              "label": "Seismic hazard",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Flood zone",
+              "raw": "X",
+              "normalized": 100,
+              "weight": 0.35
+            },
+            {
+              "label": "Wildfire risk",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.2
+            },
+            {
+              "label": "Hurricane exposure",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.25
+            }
+          ]
+        },
+        {
+          "key": "incentives",
+          "label": "Incentives",
+          "score": 76,
+          "subs": [
+            {
+              "label": "Opportunity Zone",
+              "raw": "No",
+              "normalized": 40,
+              "weight": 0.25
+            },
+            {
+              "label": "State data-center tax program",
+              "raw": "eligible strong",
+              "normalized": 100,
+              "weight": 0.45
+            },
+            {
+              "label": "Local abatement",
+              "raw": "likely",
+              "normalized": 70,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "labor",
+          "label": "Labor & Construction",
+          "score": 72,
+          "subs": [
+            {
+              "label": "Skilled trades availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to labor market",
+              "raw": "28 km",
+              "normalized": 77,
+              "weight": 0.3
+            },
+            {
+              "label": "Est. build timeline",
+              "raw": "32 mo",
+              "normalized": 53,
+              "weight": 0.3
+            }
+          ]
+        }
+      ],
+      "composite": 69
+    },
+    {
+      "id": "tx-grayson-sherman",
+      "name": "Sherman Semiconductor Park",
+      "state": "TX",
+      "county": "Grayson",
+      "lat": 33.6357,
+      "lng": -96.6089,
+      "iso": "ERCOT",
+      "acreage": 198,
+      "price_per_acre": 22665,
+      "zoning": "heavy_industrial",
+      "geotech": "good",
+      "distance_to_substation_km": 2.7,
+      "substation_headroom_mw": 231,
+      "interconnection_queue_status": "ERCOT: active interconnection studies, connect-and-manage",
+      "interconnection_queue_wait_years": 2.6,
+      "power_cost_per_mwh": 38,
+      "feed_redundancy": false,
+      "distance_to_fiber_km": 6.9,
+      "distance_to_ix_km": 55,
+      "latency_tier": 1,
+      "wet_bulb_temp_avg_c": 23.3,
+      "ambient_temp_avg_c": 19,
+      "water_availability": "moderate",
+      "seismic_risk_tier": "low",
+      "flood_zone": "X",
+      "wildfire_risk": "low",
+      "hurricane_exposure": "very_low",
+      "opportunity_zone": true,
+      "dc_tax_program": "eligible_strong",
+      "local_abatement": "likely",
+      "incentive_notes": "TX HB 1223 state sales-tax exemption (10–15 yr) + Chapter 403 / JETI Act property-value limitation (50%, up to 75% in an Opportunity Zone).",
+      "trades_availability": "high",
+      "distance_to_labor_market_km": 31,
+      "est_build_months": 34,
+      "data_note": "Sherman chip corridor (Texas Instruments, GlobalWafers); recent grid and water investment.",
+      "provenance": {
+        "distance_to_substation_km": "measured",
+        "wet_bulb_temp_avg_c": "derived",
+        "ambient_temp_avg_c": "derived",
+        "seismic_risk_tier": "measured",
+        "flood_zone": "measured",
+        "distance_to_ix_km": "measured",
+        "opportunity_zone": "measured",
+        "power_cost_per_mwh": "regional",
+        "interconnection_queue_wait_years": "regional",
+        "substation_headroom_mw": "estimated",
+        "feed_redundancy": "estimated",
+        "distance_to_fiber_km": "estimated",
+        "latency_tier": "derived",
+        "water_availability": "estimated",
+        "wildfire_risk": "estimated",
+        "hurricane_exposure": "derived",
+        "dc_tax_program": "regional",
+        "local_abatement": "estimated",
+        "trades_availability": "estimated",
+        "distance_to_labor_market_km": "derived",
+        "est_build_months": "estimated",
+        "acreage": "estimated",
+        "price_per_acre": "estimated",
+        "zoning": "regional",
+        "geotech": "estimated"
+      },
+      "sources": [
+        "Substation: HIFLD national substations (ArcGIS)",
+        "Climate: Open-Meteo archive (2023) → Stull wet-bulb",
+        "Seismic: USGS Design Maps ASCE 7-16 (SDS 0.171)",
+        "Flood: FEMA NFHL (X (AREA OF MINIMAL FLOOD HAZARD))",
+        "Interconnection: PeeringDB nearest facility",
+        "Opportunity Zone: HUD Opportunity Zones (ArcGIS)"
+      ],
+      "categories": [
+        {
+          "key": "power",
+          "label": "Power & Interconnection",
+          "score": 58,
+          "subs": [
+            {
+              "label": "Distance to substation",
+              "raw": "2.7 km",
+              "normalized": 89,
+              "weight": 0.3
+            },
+            {
+              "label": "Substation headroom",
+              "raw": "231 MW",
+              "normalized": 23,
+              "weight": 0.3
+            },
+            {
+              "label": "Interconnection queue wait",
+              "raw": "~2.6 yr (ERCOT)",
+              "normalized": 57,
+              "weight": 0.2
+            },
+            {
+              "label": "Energy cost",
+              "raw": "$38/MWh",
+              "normalized": 70,
+              "weight": 0.15
+            },
+            {
+              "label": "Feed redundancy",
+              "raw": "Single feed",
+              "normalized": 40,
+              "weight": 0.05
+            }
+          ]
+        },
+        {
+          "key": "land",
+          "label": "Land",
+          "score": 73,
+          "subs": [
+            {
+              "label": "Acreage vs. footprint",
+              "raw": "198 ac",
+              "normalized": 42,
+              "weight": 0.3
+            },
+            {
+              "label": "Zoning",
+              "raw": "heavy industrial",
+              "normalized": 100,
+              "weight": 0.3
+            },
+            {
+              "label": "Price per acre",
+              "raw": "$22,665",
+              "normalized": 66,
+              "weight": 0.25
+            },
+            {
+              "label": "Geotechnical readiness",
+              "raw": "good",
+              "normalized": 92,
+              "weight": 0.15
+            }
+          ]
+        },
+        {
+          "key": "connectivity",
+          "label": "Connectivity",
+          "score": 87,
+          "subs": [
+            {
+              "label": "Distance to long-haul fiber",
+              "raw": "6.9 km",
+              "normalized": 77,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to internet exchange",
+              "raw": "55 km",
+              "normalized": 86,
+              "weight": 0.3
+            },
+            {
+              "label": "Latency tier to major metro",
+              "raw": "Tier 1",
+              "normalized": 100,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "cooling",
+          "label": "Cooling & Climate",
+          "score": 44,
+          "subs": [
+            {
+              "label": "Avg. wet-bulb temperature",
+              "raw": "23.3 °C",
+              "normalized": 36,
+              "weight": 0.45
+            },
+            {
+              "label": "Avg. ambient temperature",
+              "raw": "19.0 °C",
+              "normalized": 39,
+              "weight": 0.25
+            },
+            {
+              "label": "Makeup-water availability",
+              "raw": "moderate",
+              "normalized": 60,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "risk",
+          "label": "Risk",
+          "score": 94,
+          "subs": [
+            {
+              "label": "Seismic hazard",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.2
+            },
+            {
+              "label": "Flood zone",
+              "raw": "X",
+              "normalized": 100,
+              "weight": 0.35
+            },
+            {
+              "label": "Wildfire risk",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.2
+            },
+            {
+              "label": "Hurricane exposure",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.25
+            }
+          ]
+        },
+        {
+          "key": "incentives",
+          "label": "Incentives",
+          "score": 91,
+          "subs": [
+            {
+              "label": "Opportunity Zone",
+              "raw": "Yes",
+              "normalized": 100,
+              "weight": 0.25
+            },
+            {
+              "label": "State data-center tax program",
+              "raw": "eligible strong",
+              "normalized": 100,
+              "weight": 0.45
+            },
+            {
+              "label": "Local abatement",
+              "raw": "likely",
+              "normalized": 70,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "labor",
+          "label": "Labor & Construction",
+          "score": 69,
+          "subs": [
+            {
+              "label": "Skilled trades availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to labor market",
+              "raw": "31 km",
+              "normalized": 74,
+              "weight": 0.3
+            },
+            {
+              "label": "Est. build timeline",
+              "raw": "34 mo",
+              "normalized": 47,
+              "weight": 0.3
+            }
+          ]
+        }
+      ],
+      "composite": 69
+    },
+    {
       "id": "tx-harris-katy",
       "name": "Katy Prairie West",
       "state": "TX",
@@ -4111,6 +6303,828 @@
               "label": "Est. build timeline",
               "raw": "37 mo",
               "normalized": 37,
+              "weight": 0.3
+            }
+          ]
+        }
+      ],
+      "composite": 68
+    },
+    {
+      "id": "tx-denton-north",
+      "name": "Denton North Yard",
+      "state": "TX",
+      "county": "Denton",
+      "lat": 33.2148,
+      "lng": -97.1331,
+      "iso": "ERCOT",
+      "acreage": 263,
+      "price_per_acre": 15251,
+      "zoning": "light_industrial",
+      "geotech": "good",
+      "distance_to_substation_km": 1.5,
+      "substation_headroom_mw": 274,
+      "interconnection_queue_status": "ERCOT: active interconnection studies, connect-and-manage",
+      "interconnection_queue_wait_years": 2.8,
+      "power_cost_per_mwh": 40,
+      "feed_redundancy": false,
+      "distance_to_fiber_km": 4.5,
+      "distance_to_ix_km": 27,
+      "latency_tier": 1,
+      "wet_bulb_temp_avg_c": 23.8,
+      "ambient_temp_avg_c": 19.8,
+      "water_availability": "moderate",
+      "seismic_risk_tier": "very_low",
+      "flood_zone": "X",
+      "wildfire_risk": "low",
+      "hurricane_exposure": "very_low",
+      "opportunity_zone": false,
+      "dc_tax_program": "eligible_strong",
+      "local_abatement": "likely",
+      "incentive_notes": "TX HB 1223 state sales-tax exemption (10–15 yr) + Chapter 403 / JETI Act property-value limitation (50%, up to 75% in an Opportunity Zone).",
+      "trades_availability": "high",
+      "distance_to_labor_market_km": 18,
+      "est_build_months": 36,
+      "data_note": "North of the DFW metroplex along I-35; growing logistics and industrial base.",
+      "provenance": {
+        "distance_to_substation_km": "measured",
+        "wet_bulb_temp_avg_c": "derived",
+        "ambient_temp_avg_c": "derived",
+        "seismic_risk_tier": "measured",
+        "flood_zone": "measured",
+        "distance_to_ix_km": "measured",
+        "opportunity_zone": "measured",
+        "power_cost_per_mwh": "regional",
+        "interconnection_queue_wait_years": "regional",
+        "substation_headroom_mw": "estimated",
+        "feed_redundancy": "estimated",
+        "distance_to_fiber_km": "estimated",
+        "latency_tier": "derived",
+        "water_availability": "estimated",
+        "wildfire_risk": "estimated",
+        "hurricane_exposure": "derived",
+        "dc_tax_program": "regional",
+        "local_abatement": "estimated",
+        "trades_availability": "estimated",
+        "distance_to_labor_market_km": "derived",
+        "est_build_months": "estimated",
+        "acreage": "estimated",
+        "price_per_acre": "estimated",
+        "zoning": "regional",
+        "geotech": "estimated"
+      },
+      "sources": [
+        "Substation: HIFLD national substations (ArcGIS)",
+        "Climate: Open-Meteo archive (2023) → Stull wet-bulb",
+        "Seismic: USGS Design Maps ASCE 7-16 (SDS 0.128)",
+        "Flood: FEMA NFHL (X (AREA OF MINIMAL FLOOD HAZARD))",
+        "Interconnection: PeeringDB nearest facility",
+        "Opportunity Zone: HUD Opportunity Zones (ArcGIS)"
+      ],
+      "categories": [
+        {
+          "key": "power",
+          "label": "Power & Interconnection",
+          "score": 59,
+          "subs": [
+            {
+              "label": "Distance to substation",
+              "raw": "1.5 km",
+              "normalized": 94,
+              "weight": 0.3
+            },
+            {
+              "label": "Substation headroom",
+              "raw": "274 MW",
+              "normalized": 27,
+              "weight": 0.3
+            },
+            {
+              "label": "Interconnection queue wait",
+              "raw": "~2.8 yr (ERCOT)",
+              "normalized": 53,
+              "weight": 0.2
+            },
+            {
+              "label": "Energy cost",
+              "raw": "$40/MWh",
+              "normalized": 67,
+              "weight": 0.15
+            },
+            {
+              "label": "Feed redundancy",
+              "raw": "Single feed",
+              "normalized": 40,
+              "weight": 0.05
+            }
+          ]
+        },
+        {
+          "key": "land",
+          "label": "Land",
+          "score": 70,
+          "subs": [
+            {
+              "label": "Acreage vs. footprint",
+              "raw": "263 ac",
+              "normalized": 61,
+              "weight": 0.3
+            },
+            {
+              "label": "Zoning",
+              "raw": "light industrial",
+              "normalized": 62,
+              "weight": 0.3
+            },
+            {
+              "label": "Price per acre",
+              "raw": "$15,251",
+              "normalized": 79,
+              "weight": 0.25
+            },
+            {
+              "label": "Geotechnical readiness",
+              "raw": "good",
+              "normalized": 92,
+              "weight": 0.15
+            }
+          ]
+        },
+        {
+          "key": "connectivity",
+          "label": "Connectivity",
+          "score": 92,
+          "subs": [
+            {
+              "label": "Distance to long-haul fiber",
+              "raw": "4.5 km",
+              "normalized": 85,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to internet exchange",
+              "raw": "27 km",
+              "normalized": 93,
+              "weight": 0.3
+            },
+            {
+              "label": "Latency tier to major metro",
+              "raw": "Tier 1",
+              "normalized": 100,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "cooling",
+          "label": "Cooling & Climate",
+          "score": 41,
+          "subs": [
+            {
+              "label": "Avg. wet-bulb temperature",
+              "raw": "23.8 °C",
+              "normalized": 32,
+              "weight": 0.45
+            },
+            {
+              "label": "Avg. ambient temperature",
+              "raw": "19.8 °C",
+              "normalized": 34,
+              "weight": 0.25
+            },
+            {
+              "label": "Makeup-water availability",
+              "raw": "moderate",
+              "normalized": 60,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "risk",
+          "label": "Risk",
+          "score": 97,
+          "subs": [
+            {
+              "label": "Seismic hazard",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Flood zone",
+              "raw": "X",
+              "normalized": 100,
+              "weight": 0.35
+            },
+            {
+              "label": "Wildfire risk",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.2
+            },
+            {
+              "label": "Hurricane exposure",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.25
+            }
+          ]
+        },
+        {
+          "key": "incentives",
+          "label": "Incentives",
+          "score": 76,
+          "subs": [
+            {
+              "label": "Opportunity Zone",
+              "raw": "No",
+              "normalized": 40,
+              "weight": 0.25
+            },
+            {
+              "label": "State data-center tax program",
+              "raw": "eligible strong",
+              "normalized": 100,
+              "weight": 0.45
+            },
+            {
+              "label": "Local abatement",
+              "raw": "likely",
+              "normalized": 70,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "labor",
+          "label": "Labor & Construction",
+          "score": 70,
+          "subs": [
+            {
+              "label": "Skilled trades availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to labor market",
+              "raw": "18 km",
+              "normalized": 85,
+              "weight": 0.3
+            },
+            {
+              "label": "Est. build timeline",
+              "raw": "36 mo",
+              "normalized": 40,
+              "weight": 0.3
+            }
+          ]
+        }
+      ],
+      "composite": 68
+    },
+    {
+      "id": "tx-hays-sanmarcos",
+      "name": "San Marcos Corridor",
+      "state": "TX",
+      "county": "Hays",
+      "lat": 29.8833,
+      "lng": -97.9414,
+      "iso": "ERCOT",
+      "acreage": 354,
+      "price_per_acre": 16615,
+      "zoning": "light_industrial",
+      "geotech": "good",
+      "distance_to_substation_km": 1.1,
+      "substation_headroom_mw": 333,
+      "interconnection_queue_status": "ERCOT: active interconnection studies, connect-and-manage",
+      "interconnection_queue_wait_years": 3.2,
+      "power_cost_per_mwh": 41,
+      "feed_redundancy": false,
+      "distance_to_fiber_km": 7.5,
+      "distance_to_ix_km": 41,
+      "latency_tier": 1,
+      "wet_bulb_temp_avg_c": 24.2,
+      "ambient_temp_avg_c": 21.6,
+      "water_availability": "moderate",
+      "seismic_risk_tier": "very_low",
+      "flood_zone": "X",
+      "wildfire_risk": "low",
+      "hurricane_exposure": "low",
+      "opportunity_zone": false,
+      "dc_tax_program": "eligible_strong",
+      "local_abatement": "likely",
+      "incentive_notes": "TX HB 1223 state sales-tax exemption (10–15 yr) + Chapter 403 / JETI Act property-value limitation (50%, up to 75% in an Opportunity Zone).",
+      "trades_availability": "high",
+      "distance_to_labor_market_km": 29,
+      "est_build_months": 37,
+      "data_note": "Between Austin and San Antonio on I-35; growing, though land is tightening.",
+      "provenance": {
+        "distance_to_substation_km": "measured",
+        "wet_bulb_temp_avg_c": "derived",
+        "ambient_temp_avg_c": "derived",
+        "seismic_risk_tier": "measured",
+        "flood_zone": "measured",
+        "distance_to_ix_km": "measured",
+        "opportunity_zone": "measured",
+        "power_cost_per_mwh": "regional",
+        "interconnection_queue_wait_years": "regional",
+        "substation_headroom_mw": "estimated",
+        "feed_redundancy": "estimated",
+        "distance_to_fiber_km": "estimated",
+        "latency_tier": "derived",
+        "water_availability": "estimated",
+        "wildfire_risk": "estimated",
+        "hurricane_exposure": "derived",
+        "dc_tax_program": "regional",
+        "local_abatement": "estimated",
+        "trades_availability": "estimated",
+        "distance_to_labor_market_km": "derived",
+        "est_build_months": "estimated",
+        "acreage": "estimated",
+        "price_per_acre": "estimated",
+        "zoning": "regional",
+        "geotech": "estimated"
+      },
+      "sources": [
+        "Substation: HIFLD national substations (ArcGIS)",
+        "Climate: Open-Meteo archive (2023) → Stull wet-bulb",
+        "Seismic: USGS Design Maps ASCE 7-16 (SDS 0.055)",
+        "Flood: FEMA NFHL (X (AREA OF MINIMAL FLOOD HAZARD))",
+        "Interconnection: PeeringDB nearest facility",
+        "Opportunity Zone: HUD Opportunity Zones (ArcGIS)"
+      ],
+      "categories": [
+        {
+          "key": "power",
+          "label": "Power & Interconnection",
+          "score": 60,
+          "subs": [
+            {
+              "label": "Distance to substation",
+              "raw": "1.1 km",
+              "normalized": 96,
+              "weight": 0.3
+            },
+            {
+              "label": "Substation headroom",
+              "raw": "333 MW",
+              "normalized": 33,
+              "weight": 0.3
+            },
+            {
+              "label": "Interconnection queue wait",
+              "raw": "~3.2 yr (ERCOT)",
+              "normalized": 47,
+              "weight": 0.2
+            },
+            {
+              "label": "Energy cost",
+              "raw": "$41/MWh",
+              "normalized": 65,
+              "weight": 0.15
+            },
+            {
+              "label": "Feed redundancy",
+              "raw": "Single feed",
+              "normalized": 40,
+              "weight": 0.05
+            }
+          ]
+        },
+        {
+          "key": "land",
+          "label": "Land",
+          "score": 78,
+          "subs": [
+            {
+              "label": "Acreage vs. footprint",
+              "raw": "354 ac",
+              "normalized": 87,
+              "weight": 0.3
+            },
+            {
+              "label": "Zoning",
+              "raw": "light industrial",
+              "normalized": 62,
+              "weight": 0.3
+            },
+            {
+              "label": "Price per acre",
+              "raw": "$16,615",
+              "normalized": 76,
+              "weight": 0.25
+            },
+            {
+              "label": "Geotechnical readiness",
+              "raw": "good",
+              "normalized": 92,
+              "weight": 0.15
+            }
+          ]
+        },
+        {
+          "key": "connectivity",
+          "label": "Connectivity",
+          "score": 87,
+          "subs": [
+            {
+              "label": "Distance to long-haul fiber",
+              "raw": "7.5 km",
+              "normalized": 75,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to internet exchange",
+              "raw": "41 km",
+              "normalized": 90,
+              "weight": 0.3
+            },
+            {
+              "label": "Latency tier to major metro",
+              "raw": "Tier 1",
+              "normalized": 100,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "cooling",
+          "label": "Cooling & Climate",
+          "score": 37,
+          "subs": [
+            {
+              "label": "Avg. wet-bulb temperature",
+              "raw": "24.2 °C",
+              "normalized": 29,
+              "weight": 0.45
+            },
+            {
+              "label": "Avg. ambient temperature",
+              "raw": "21.6 °C",
+              "normalized": 24,
+              "weight": 0.25
+            },
+            {
+              "label": "Makeup-water availability",
+              "raw": "moderate",
+              "normalized": 60,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "risk",
+          "label": "Risk",
+          "score": 93,
+          "subs": [
+            {
+              "label": "Seismic hazard",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Flood zone",
+              "raw": "X",
+              "normalized": 100,
+              "weight": 0.35
+            },
+            {
+              "label": "Wildfire risk",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.2
+            },
+            {
+              "label": "Hurricane exposure",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.25
+            }
+          ]
+        },
+        {
+          "key": "incentives",
+          "label": "Incentives",
+          "score": 76,
+          "subs": [
+            {
+              "label": "Opportunity Zone",
+              "raw": "No",
+              "normalized": 40,
+              "weight": 0.25
+            },
+            {
+              "label": "State data-center tax program",
+              "raw": "eligible strong",
+              "normalized": 100,
+              "weight": 0.45
+            },
+            {
+              "label": "Local abatement",
+              "raw": "likely",
+              "normalized": 70,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "labor",
+          "label": "Labor & Construction",
+          "score": 67,
+          "subs": [
+            {
+              "label": "Skilled trades availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to labor market",
+              "raw": "29 km",
+              "normalized": 76,
+              "weight": 0.3
+            },
+            {
+              "label": "Est. build timeline",
+              "raw": "37 mo",
+              "normalized": 37,
+              "weight": 0.3
+            }
+          ]
+        }
+      ],
+      "composite": 68
+    },
+    {
+      "id": "ny-orange-montgomery",
+      "name": "Hudson Valley Gateway",
+      "state": "NY",
+      "county": "Orange",
+      "lat": 41.5292,
+      "lng": -74.2385,
+      "iso": "NYISO",
+      "acreage": 351,
+      "price_per_acre": 6433,
+      "zoning": "industrial",
+      "geotech": "good",
+      "distance_to_substation_km": 4.9,
+      "substation_headroom_mw": 109,
+      "interconnection_queue_status": "NYISO: Class Year study cycle, longer queue",
+      "interconnection_queue_wait_years": 4.4,
+      "power_cost_per_mwh": 43,
+      "feed_redundancy": false,
+      "distance_to_fiber_km": 6.3,
+      "distance_to_ix_km": 31,
+      "latency_tier": 1,
+      "wet_bulb_temp_avg_c": 18.1,
+      "ambient_temp_avg_c": 11.4,
+      "water_availability": "high",
+      "seismic_risk_tier": "low",
+      "flood_zone": "ae",
+      "wildfire_risk": "very_low",
+      "hurricane_exposure": "very_low",
+      "opportunity_zone": false,
+      "dc_tax_program": "under_review",
+      "local_abatement": "likely",
+      "incentive_notes": "NY §1115(a)(37) internet-data-center sales-tax exemption currently applies but faces proposed repeal (S9288, Feb 2026), so treat it as under legislative review.",
+      "trades_availability": "high",
+      "distance_to_labor_market_km": 23,
+      "est_build_months": 31,
+      "data_note": "Hudson Valley within the NYC latency corridor; transmission and fiber density.",
+      "provenance": {
+        "distance_to_substation_km": "measured",
+        "wet_bulb_temp_avg_c": "derived",
+        "ambient_temp_avg_c": "derived",
+        "seismic_risk_tier": "measured",
+        "flood_zone": "measured",
+        "distance_to_ix_km": "measured",
+        "opportunity_zone": "measured",
+        "power_cost_per_mwh": "regional",
+        "interconnection_queue_wait_years": "regional",
+        "substation_headroom_mw": "estimated",
+        "feed_redundancy": "estimated",
+        "distance_to_fiber_km": "estimated",
+        "latency_tier": "derived",
+        "water_availability": "estimated",
+        "wildfire_risk": "estimated",
+        "hurricane_exposure": "derived",
+        "dc_tax_program": "regional",
+        "local_abatement": "estimated",
+        "trades_availability": "estimated",
+        "distance_to_labor_market_km": "derived",
+        "est_build_months": "estimated",
+        "acreage": "estimated",
+        "price_per_acre": "estimated",
+        "zoning": "regional",
+        "geotech": "estimated"
+      },
+      "sources": [
+        "Substation: HIFLD national substations (ArcGIS)",
+        "Climate: Open-Meteo archive (2023) → Stull wet-bulb",
+        "Seismic: USGS Design Maps ASCE 7-16 (SDS 0.225)",
+        "Flood: FEMA NFHL (AE)",
+        "Interconnection: PeeringDB nearest facility",
+        "Opportunity Zone: HUD Opportunity Zones (ArcGIS)"
+      ],
+      "categories": [
+        {
+          "key": "power",
+          "label": "Power & Interconnection",
+          "score": 44,
+          "subs": [
+            {
+              "label": "Distance to substation",
+              "raw": "4.9 km",
+              "normalized": 80,
+              "weight": 0.3
+            },
+            {
+              "label": "Substation headroom",
+              "raw": "109 MW",
+              "normalized": 11,
+              "weight": 0.3
+            },
+            {
+              "label": "Interconnection queue wait",
+              "raw": "~4.4 yr (NYISO)",
+              "normalized": 27,
+              "weight": 0.2
+            },
+            {
+              "label": "Energy cost",
+              "raw": "$43/MWh",
+              "normalized": 62,
+              "weight": 0.15
+            },
+            {
+              "label": "Feed redundancy",
+              "raw": "Single feed",
+              "normalized": 40,
+              "weight": 0.05
+            }
+          ]
+        },
+        {
+          "key": "land",
+          "label": "Land",
+          "score": 89,
+          "subs": [
+            {
+              "label": "Acreage vs. footprint",
+              "raw": "351 ac",
+              "normalized": 86,
+              "weight": 0.3
+            },
+            {
+              "label": "Zoning",
+              "raw": "industrial",
+              "normalized": 85,
+              "weight": 0.3
+            },
+            {
+              "label": "Price per acre",
+              "raw": "$6,433",
+              "normalized": 94,
+              "weight": 0.25
+            },
+            {
+              "label": "Geotechnical readiness",
+              "raw": "good",
+              "normalized": 92,
+              "weight": 0.15
+            }
+          ]
+        },
+        {
+          "key": "connectivity",
+          "label": "Connectivity",
+          "score": 89,
+          "subs": [
+            {
+              "label": "Distance to long-haul fiber",
+              "raw": "6.3 km",
+              "normalized": 79,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to internet exchange",
+              "raw": "31 km",
+              "normalized": 92,
+              "weight": 0.3
+            },
+            {
+              "label": "Latency tier to major metro",
+              "raw": "Tier 1",
+              "normalized": 100,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "cooling",
+          "label": "Cooling & Climate",
+          "score": 79,
+          "subs": [
+            {
+              "label": "Avg. wet-bulb temperature",
+              "raw": "18.1 °C",
+              "normalized": 76,
+              "weight": 0.45
+            },
+            {
+              "label": "Avg. ambient temperature",
+              "raw": "11.4 °C",
+              "normalized": 81,
+              "weight": 0.25
+            },
+            {
+              "label": "Makeup-water availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "risk",
+          "label": "Risk",
+          "score": 77,
+          "subs": [
+            {
+              "label": "Seismic hazard",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.2
+            },
+            {
+              "label": "Flood zone",
+              "raw": "AE",
+              "normalized": 42,
+              "weight": 0.35
+            },
+            {
+              "label": "Wildfire risk",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Hurricane exposure",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.25
+            }
+          ]
+        },
+        {
+          "key": "incentives",
+          "label": "Incentives",
+          "score": 56,
+          "subs": [
+            {
+              "label": "Opportunity Zone",
+              "raw": "No",
+              "normalized": 40,
+              "weight": 0.25
+            },
+            {
+              "label": "State data-center tax program",
+              "raw": "under review",
+              "normalized": 55,
+              "weight": 0.45
+            },
+            {
+              "label": "Local abatement",
+              "raw": "likely",
+              "normalized": 70,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "labor",
+          "label": "Labor & Construction",
+          "score": 74,
+          "subs": [
+            {
+              "label": "Skilled trades availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to labor market",
+              "raw": "23 km",
+              "normalized": 81,
+              "weight": 0.3
+            },
+            {
+              "label": "Est. build timeline",
+              "raw": "31 mo",
+              "normalized": 57,
               "weight": 0.3
             }
           ]
@@ -5207,6 +8221,554 @@
               "label": "Est. build timeline",
               "raw": "34 mo",
               "normalized": 47,
+              "weight": 0.3
+            }
+          ]
+        }
+      ],
+      "composite": 65
+    },
+    {
+      "id": "tx-fortbend-rosenberg",
+      "name": "Rosenberg Logistics",
+      "state": "TX",
+      "county": "Fort Bend",
+      "lat": 29.5136,
+      "lng": -95.7788,
+      "iso": "ERCOT",
+      "acreage": 285,
+      "price_per_acre": 12426,
+      "zoning": "light_industrial",
+      "geotech": "good",
+      "distance_to_substation_km": 5.4,
+      "substation_headroom_mw": 152,
+      "interconnection_queue_status": "ERCOT: active interconnection studies, connect-and-manage",
+      "interconnection_queue_wait_years": 2.1,
+      "power_cost_per_mwh": 36,
+      "feed_redundancy": false,
+      "distance_to_fiber_km": 5.3,
+      "distance_to_ix_km": 31,
+      "latency_tier": 1,
+      "wet_bulb_temp_avg_c": 25.4,
+      "ambient_temp_avg_c": 22.3,
+      "water_availability": "moderate",
+      "seismic_risk_tier": "very_low",
+      "flood_zone": "X",
+      "wildfire_risk": "low",
+      "hurricane_exposure": "moderate",
+      "opportunity_zone": false,
+      "dc_tax_program": "eligible_strong",
+      "local_abatement": "likely",
+      "incentive_notes": "TX HB 1223 state sales-tax exemption (10–15 yr) + Chapter 403 / JETI Act property-value limitation (50%, up to 75% in an Opportunity Zone).",
+      "trades_availability": "high",
+      "distance_to_labor_market_km": 21,
+      "est_build_months": 32,
+      "data_note": "Southwest Houston industrial corridor with rail and pipeline access.",
+      "provenance": {
+        "distance_to_substation_km": "measured",
+        "wet_bulb_temp_avg_c": "derived",
+        "ambient_temp_avg_c": "derived",
+        "seismic_risk_tier": "measured",
+        "flood_zone": "measured",
+        "distance_to_ix_km": "measured",
+        "opportunity_zone": "measured",
+        "power_cost_per_mwh": "regional",
+        "interconnection_queue_wait_years": "regional",
+        "substation_headroom_mw": "estimated",
+        "feed_redundancy": "estimated",
+        "distance_to_fiber_km": "estimated",
+        "latency_tier": "derived",
+        "water_availability": "estimated",
+        "wildfire_risk": "estimated",
+        "hurricane_exposure": "derived",
+        "dc_tax_program": "regional",
+        "local_abatement": "estimated",
+        "trades_availability": "estimated",
+        "distance_to_labor_market_km": "derived",
+        "est_build_months": "estimated",
+        "acreage": "estimated",
+        "price_per_acre": "estimated",
+        "zoning": "regional",
+        "geotech": "estimated"
+      },
+      "sources": [
+        "Substation: HIFLD national substations (ArcGIS)",
+        "Climate: Open-Meteo archive (2023) → Stull wet-bulb",
+        "Seismic: USGS Design Maps ASCE 7-16 (SDS 0.068)",
+        "Flood: FEMA NFHL (X (AREA OF MINIMAL FLOOD HAZARD))",
+        "Interconnection: PeeringDB nearest facility",
+        "Opportunity Zone: HUD Opportunity Zones (ArcGIS)"
+      ],
+      "categories": [
+        {
+          "key": "power",
+          "label": "Power & Interconnection",
+          "score": 54,
+          "subs": [
+            {
+              "label": "Distance to substation",
+              "raw": "5.4 km",
+              "normalized": 78,
+              "weight": 0.3
+            },
+            {
+              "label": "Substation headroom",
+              "raw": "152 MW",
+              "normalized": 15,
+              "weight": 0.3
+            },
+            {
+              "label": "Interconnection queue wait",
+              "raw": "~2.1 yr (ERCOT)",
+              "normalized": 65,
+              "weight": 0.2
+            },
+            {
+              "label": "Energy cost",
+              "raw": "$36/MWh",
+              "normalized": 73,
+              "weight": 0.15
+            },
+            {
+              "label": "Feed redundancy",
+              "raw": "Single feed",
+              "normalized": 40,
+              "weight": 0.05
+            }
+          ]
+        },
+        {
+          "key": "land",
+          "label": "Land",
+          "score": 73,
+          "subs": [
+            {
+              "label": "Acreage vs. footprint",
+              "raw": "285 ac",
+              "normalized": 67,
+              "weight": 0.3
+            },
+            {
+              "label": "Zoning",
+              "raw": "light industrial",
+              "normalized": 62,
+              "weight": 0.3
+            },
+            {
+              "label": "Price per acre",
+              "raw": "$12,426",
+              "normalized": 83,
+              "weight": 0.25
+            },
+            {
+              "label": "Geotechnical readiness",
+              "raw": "good",
+              "normalized": 92,
+              "weight": 0.15
+            }
+          ]
+        },
+        {
+          "key": "connectivity",
+          "label": "Connectivity",
+          "score": 90,
+          "subs": [
+            {
+              "label": "Distance to long-haul fiber",
+              "raw": "5.3 km",
+              "normalized": 82,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to internet exchange",
+              "raw": "31 km",
+              "normalized": 92,
+              "weight": 0.3
+            },
+            {
+              "label": "Latency tier to major metro",
+              "raw": "Tier 1",
+              "normalized": 100,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "cooling",
+          "label": "Cooling & Climate",
+          "score": 32,
+          "subs": [
+            {
+              "label": "Avg. wet-bulb temperature",
+              "raw": "25.4 °C",
+              "normalized": 20,
+              "weight": 0.45
+            },
+            {
+              "label": "Avg. ambient temperature",
+              "raw": "22.3 °C",
+              "normalized": 21,
+              "weight": 0.25
+            },
+            {
+              "label": "Makeup-water availability",
+              "raw": "moderate",
+              "normalized": 60,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "risk",
+          "label": "Risk",
+          "score": 87,
+          "subs": [
+            {
+              "label": "Seismic hazard",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Flood zone",
+              "raw": "X",
+              "normalized": 100,
+              "weight": 0.35
+            },
+            {
+              "label": "Wildfire risk",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.2
+            },
+            {
+              "label": "Hurricane exposure",
+              "raw": "moderate",
+              "normalized": 58,
+              "weight": 0.25
+            }
+          ]
+        },
+        {
+          "key": "incentives",
+          "label": "Incentives",
+          "score": 76,
+          "subs": [
+            {
+              "label": "Opportunity Zone",
+              "raw": "No",
+              "normalized": 40,
+              "weight": 0.25
+            },
+            {
+              "label": "State data-center tax program",
+              "raw": "eligible strong",
+              "normalized": 100,
+              "weight": 0.45
+            },
+            {
+              "label": "Local abatement",
+              "raw": "likely",
+              "normalized": 70,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "labor",
+          "label": "Labor & Construction",
+          "score": 74,
+          "subs": [
+            {
+              "label": "Skilled trades availability",
+              "raw": "high",
+              "normalized": 82,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to labor market",
+              "raw": "21 km",
+              "normalized": 83,
+              "weight": 0.3
+            },
+            {
+              "label": "Est. build timeline",
+              "raw": "32 mo",
+              "normalized": 53,
+              "weight": 0.3
+            }
+          ]
+        }
+      ],
+      "composite": 65
+    },
+    {
+      "id": "tx-freestone-fairfield",
+      "name": "Big Brown Repower Site",
+      "state": "TX",
+      "county": "Freestone",
+      "lat": 31.7246,
+      "lng": -96.1638,
+      "iso": "ERCOT",
+      "acreage": 348,
+      "price_per_acre": 11477,
+      "zoning": "industrial",
+      "geotech": "good",
+      "distance_to_substation_km": 2.2,
+      "substation_headroom_mw": 111,
+      "interconnection_queue_status": "ERCOT: active interconnection studies, connect-and-manage",
+      "interconnection_queue_wait_years": 1.9,
+      "power_cost_per_mwh": 35,
+      "feed_redundancy": false,
+      "distance_to_fiber_km": 13.8,
+      "distance_to_ix_km": 94,
+      "latency_tier": 2,
+      "wet_bulb_temp_avg_c": 24.2,
+      "ambient_temp_avg_c": 20.8,
+      "water_availability": "moderate",
+      "seismic_risk_tier": "very_low",
+      "flood_zone": "X",
+      "wildfire_risk": "low",
+      "hurricane_exposure": "low",
+      "opportunity_zone": false,
+      "dc_tax_program": "eligible_strong",
+      "local_abatement": "likely",
+      "incentive_notes": "TX HB 1223 state sales-tax exemption (10–15 yr) + Chapter 403 / JETI Act property-value limitation (50%, up to 75% in an Opportunity Zone).",
+      "trades_availability": "moderate",
+      "distance_to_labor_market_km": 58,
+      "est_build_months": 31,
+      "data_note": "Retired Big Brown coal plant with retained high-voltage transmission.",
+      "provenance": {
+        "distance_to_substation_km": "measured",
+        "wet_bulb_temp_avg_c": "derived",
+        "ambient_temp_avg_c": "derived",
+        "seismic_risk_tier": "measured",
+        "flood_zone": "measured",
+        "distance_to_ix_km": "measured",
+        "opportunity_zone": "measured",
+        "power_cost_per_mwh": "regional",
+        "interconnection_queue_wait_years": "regional",
+        "substation_headroom_mw": "estimated",
+        "feed_redundancy": "estimated",
+        "distance_to_fiber_km": "estimated",
+        "latency_tier": "derived",
+        "water_availability": "estimated",
+        "wildfire_risk": "estimated",
+        "hurricane_exposure": "derived",
+        "dc_tax_program": "regional",
+        "local_abatement": "estimated",
+        "trades_availability": "estimated",
+        "distance_to_labor_market_km": "derived",
+        "est_build_months": "estimated",
+        "acreage": "estimated",
+        "price_per_acre": "estimated",
+        "zoning": "regional",
+        "geotech": "estimated"
+      },
+      "sources": [
+        "Substation: HIFLD national substations (ArcGIS)",
+        "Climate: Open-Meteo archive (2023) → Stull wet-bulb",
+        "Seismic: USGS Design Maps ASCE 7-16 (SDS 0.083)",
+        "Flood: FEMA NFHL (X (AREA OF MINIMAL FLOOD HAZARD))",
+        "Interconnection: PeeringDB nearest facility",
+        "Opportunity Zone: HUD Opportunity Zones (ArcGIS)"
+      ],
+      "categories": [
+        {
+          "key": "power",
+          "label": "Power & Interconnection",
+          "score": 57,
+          "subs": [
+            {
+              "label": "Distance to substation",
+              "raw": "2.2 km",
+              "normalized": 91,
+              "weight": 0.3
+            },
+            {
+              "label": "Substation headroom",
+              "raw": "111 MW",
+              "normalized": 11,
+              "weight": 0.3
+            },
+            {
+              "label": "Interconnection queue wait",
+              "raw": "~1.9 yr (ERCOT)",
+              "normalized": 68,
+              "weight": 0.2
+            },
+            {
+              "label": "Energy cost",
+              "raw": "$35/MWh",
+              "normalized": 75,
+              "weight": 0.15
+            },
+            {
+              "label": "Feed redundancy",
+              "raw": "Single feed",
+              "normalized": 40,
+              "weight": 0.05
+            }
+          ]
+        },
+        {
+          "key": "land",
+          "label": "Land",
+          "score": 86,
+          "subs": [
+            {
+              "label": "Acreage vs. footprint",
+              "raw": "348 ac",
+              "normalized": 85,
+              "weight": 0.3
+            },
+            {
+              "label": "Zoning",
+              "raw": "industrial",
+              "normalized": 85,
+              "weight": 0.3
+            },
+            {
+              "label": "Price per acre",
+              "raw": "$11,477",
+              "normalized": 85,
+              "weight": 0.25
+            },
+            {
+              "label": "Geotechnical readiness",
+              "raw": "good",
+              "normalized": 92,
+              "weight": 0.15
+            }
+          ]
+        },
+        {
+          "key": "connectivity",
+          "label": "Connectivity",
+          "score": 66,
+          "subs": [
+            {
+              "label": "Distance to long-haul fiber",
+              "raw": "13.8 km",
+              "normalized": 54,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to internet exchange",
+              "raw": "94 km",
+              "normalized": 77,
+              "weight": 0.3
+            },
+            {
+              "label": "Latency tier to major metro",
+              "raw": "Tier 2",
+              "normalized": 70,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "cooling",
+          "label": "Cooling & Climate",
+          "score": 38,
+          "subs": [
+            {
+              "label": "Avg. wet-bulb temperature",
+              "raw": "24.2 °C",
+              "normalized": 29,
+              "weight": 0.45
+            },
+            {
+              "label": "Avg. ambient temperature",
+              "raw": "20.8 °C",
+              "normalized": 29,
+              "weight": 0.25
+            },
+            {
+              "label": "Makeup-water availability",
+              "raw": "moderate",
+              "normalized": 60,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "risk",
+          "label": "Risk",
+          "score": 93,
+          "subs": [
+            {
+              "label": "Seismic hazard",
+              "raw": "very low",
+              "normalized": 100,
+              "weight": 0.2
+            },
+            {
+              "label": "Flood zone",
+              "raw": "X",
+              "normalized": 100,
+              "weight": 0.35
+            },
+            {
+              "label": "Wildfire risk",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.2
+            },
+            {
+              "label": "Hurricane exposure",
+              "raw": "low",
+              "normalized": 85,
+              "weight": 0.25
+            }
+          ]
+        },
+        {
+          "key": "incentives",
+          "label": "Incentives",
+          "score": 76,
+          "subs": [
+            {
+              "label": "Opportunity Zone",
+              "raw": "No",
+              "normalized": 40,
+              "weight": 0.25
+            },
+            {
+              "label": "State data-center tax program",
+              "raw": "eligible strong",
+              "normalized": 100,
+              "weight": 0.45
+            },
+            {
+              "label": "Local abatement",
+              "raw": "likely",
+              "normalized": 70,
+              "weight": 0.3
+            }
+          ]
+        },
+        {
+          "key": "labor",
+          "label": "Labor & Construction",
+          "score": 58,
+          "subs": [
+            {
+              "label": "Skilled trades availability",
+              "raw": "moderate",
+              "normalized": 62,
+              "weight": 0.4
+            },
+            {
+              "label": "Distance to labor market",
+              "raw": "58 km",
+              "normalized": 52,
+              "weight": 0.3
+            },
+            {
+              "label": "Est. build timeline",
+              "raw": "31 mo",
+              "normalized": 57,
               "weight": 0.3
             }
           ]
