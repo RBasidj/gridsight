@@ -1,6 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
 import { composite, scoreColor, type ScoredSite } from "@/lib/scoring";
+import { getBrief } from "@/lib/briefs";
 import { useApp } from "@/lib/store";
 import { PIPELINE_STAGES, type PipelineStage } from "@/lib/types";
 import CategoryRadar from "./CategoryRadar";
@@ -34,23 +34,7 @@ export default function SiteDetailPanel({ site, onClose }: { site: ScoredSite; o
   const p = site.provenance ?? {};
   const stage = stages[site.id] ?? "sourced";
 
-  const [brief, setBrief] = useState<{ text: string; source: string } | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    let alive = true;
-    setLoading(true);
-    setBrief(null);
-    fetch(`/api/brief?id=${site.id}`)
-      .then((r) => r.json())
-      .then((d) => alive && setBrief(d))
-      .catch(() => alive && setBrief({ text: "Brief could not be loaded.", source: "error" }))
-      .finally(() => alive && setLoading(false));
-    return () => {
-      alive = false;
-    };
-  }, [site.id]);
-
+  const brief = getBrief(site);
   const inList = shortlist.includes(site.id);
 
   return (
@@ -148,17 +132,11 @@ export default function SiteDetailPanel({ site, onClose }: { site: ScoredSite; o
       <section className="sheet p-4">
         <div className="mb-3 flex items-center justify-between">
           <h3 className="eyebrow">Written read</h3>
-          {brief && (
-            <span className="font-mono text-[10px] uppercase tracking-wide text-ink-faint">
-              {brief.source === "claude" ? "Claude, cached" : "template"}
-            </span>
-          )}
+          <span className="font-mono text-[10px] uppercase tracking-wide text-ink-faint">
+            {brief.source === "claude" ? "Claude, cached" : "template"}
+          </span>
         </div>
-        {loading ? (
-          <p className="animate-pulse text-sm text-ink-faint">Loading brief.</p>
-        ) : (
-          <p className="whitespace-pre-line text-sm leading-relaxed text-ink">{brief?.text}</p>
-        )}
+        <p className="whitespace-pre-line text-sm leading-relaxed text-ink">{brief.text}</p>
       </section>
 
       <Block title="Where the data came from">
