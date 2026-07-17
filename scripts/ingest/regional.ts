@@ -62,8 +62,8 @@ export function deriveRegional(c: Candidate, ixKm: number): Regional {
   // Interconnection queue — ERCOT connect-and-manage is faster than NYISO.
   const waitYears = isTX ? Math.round((2.5 + jitter(seed, 1.5)) * 10) / 10 : Math.round((5 + jitter(seed, 1.5)) * 10) / 10;
   const queueStatus = isTX
-    ? "ERCOT — active interconnection studies; connect-and-manage"
-    : "NYISO — Class Year study cycle; longer queue";
+    ? "ERCOT: active interconnection studies, connect-and-manage"
+    : "NYISO: Class Year study cycle, longer queue";
 
   // Substation headroom (MW) — mega power sites much higher; estimated.
   const headroom = Math.round((MEGASITE.has(c.id) ? 650 : 220) + jitter(seed, 260));
@@ -92,7 +92,7 @@ export function deriveRegional(c: Candidate, ixKm: number): Regional {
   const local_abatement: "yes" | "likely" | "no" = MEGASITE.has(c.id) ? "yes" : isTX ? "likely" : "likely";
   const incentive_notes = isTX
     ? "TX HB 1223 state sales-tax exemption (10–15 yr) + Chapter 403 / JETI Act property-value limitation (50%, up to 75% in an Opportunity Zone)."
-    : "NY §1115(a)(37) internet-data-center sales-tax exemption currently applies but faces proposed repeal (S9288, Feb 2026) — treat as under legislative review.";
+    : "NY §1115(a)(37) internet-data-center sales-tax exemption currently applies but faces proposed repeal (S9288, Feb 2026), so treat it as under legislative review.";
 
   // Labor & construction — from metro proximity.
   const laborKm = Math.round(Math.min(ixKm * 0.55, 110) + Math.abs(jitter(seed, 15)));
