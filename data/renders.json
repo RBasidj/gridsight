@@ -1,5 +1,21 @@
 {
-  "generatedAt": null,
-  "model": null,
-  "renders": {}
+  "generatedAt": "2026-07-17T20:38:35.869Z",
+  "model": "gpt-image-2",
+  "renders": {
+    "ny-stlawrence-massena": {
+      "file": "ny-stlawrence-massena.webp",
+      "satellite": "ny-stlawrence-massena.jpg",
+      "generatedAt": "2026-07-17T20:38:35.868Z"
+    },
+    "ny-genesee-stamp": {
+      "file": "ny-genesee-stamp.webp",
+      "satellite": "ny-genesee-stamp.jpg",
+      "generatedAt": "2026-07-17T20:38:35.869Z"
+    },
+    "ny-oneida-marcy": {
+      "file": "ny-oneida-marcy.webp",
+      "satellite": "ny-oneida-marcy.jpg",
+      "generatedAt": "2026-07-17T20:38:35.869Z"
+    }
+  }
 }

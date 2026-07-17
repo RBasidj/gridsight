@@ -6,8 +6,9 @@
 // public/ and served statically, so the deployed site makes no live image calls.
 //
 // Env (.env.local): OPENAI_API_KEY. Optional: OPENAI_IMAGE_MODEL (default
-// gpt-image-2), RENDER_QUALITY (low|medium|high, default high), RENDER_LIMIT,
-// RENDER_FORCE=1 to regenerate existing renders.
+// gpt-image-2), RENDER_QUALITY (low|medium|high, default medium), RENDER_LIMIT
+// (cap new renders per run; 0 just rebuilds the manifest), RENDER_FORCE=1 to
+// regenerate existing renders.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import OpenAI, { toFile } from "openai";
@@ -18,11 +19,16 @@ import type { ScoredSite } from "../../lib/scoring";
 loadEnvLocal();
 
 const MODEL = process.env.OPENAI_IMAGE_MODEL || "gpt-image-2";
-const QUALITY = (process.env.RENDER_QUALITY || "high") as "low" | "medium" | "high";
-const LIMIT = process.env.RENDER_LIMIT ? parseInt(process.env.RENDER_LIMIT) : Infinity;
+const QUALITY = (process.env.RENDER_QUALITY || "medium") as "low" | "medium" | "high";
+const LIMIT = process.env.RENDER_LIMIT !== undefined ? parseInt(process.env.RENDER_LIMIT) : Infinity;
 const FORCE = process.env.RENDER_FORCE === "1";
+const THROTTLE_MS = process.env.RENDER_THROTTLE ? parseInt(process.env.RENDER_THROTTLE) : 4000;
 
 const R = 6378137; // Web Mercator radius
+const ROOT = process.cwd();
+const RENDER_DIR = join(ROOT, "public", "renders");
+const SAT_DIR = join(ROOT, "public", "satellite");
+const MANIFEST = join(ROOT, "data", "renders.json");
 
 /** USGS NAIP aerial still centered on lat/lng, frame in true ground meters. */
 function naipUrl(lat: number, lng: number, frameMeters = 1100, px = 1024): string {
@@ -34,44 +40,62 @@ function naipUrl(lat: number, lng: number, frameMeters = 1100, px = 1024): strin
   return `https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?${p}`;
 }
 
+function existingRender(id: string): string | null {
+  for (const ext of ["jpg", "webp", "png"]) {
+    if (existsSync(join(RENDER_DIR, `${id}.${ext}`))) return `${id}.${ext}`;
+  }
+  return null;
+}
+
+function loadManifest() {
+  return existsSync(MANIFEST)
+    ? JSON.parse(readFileSync(MANIFEST, "utf8"))
+    : { generatedAt: null, model: null, renders: {} };
+}
+function saveManifest(m: any) {
+  m.generatedAt = new Date().toISOString();
+  writeFileSync(MANIFEST, JSON.stringify(m, null, 2));
+}
+
 async function main() {
+  mkdirSync(RENDER_DIR, { recursive: true });
+  mkdirSync(SAT_DIR, { recursive: true });
+  const snap = JSON.parse(readFileSync(join(ROOT, "data", "sites.snapshot.json"), "utf8"));
+  const sites: ScoredSite[] = snap.sites;
+  const manifest = loadManifest();
+
+  // Rebuild the manifest from whatever renders already exist on disk, so an
+  // interrupted run is never lost and the app can see finished images.
+  let recovered = 0;
+  for (const site of sites) {
+    const file = existingRender(site.id);
+    if (file && !manifest.renders[site.id]) {
+      const sat = existsSync(join(SAT_DIR, `${site.id}.jpg`)) ? `${site.id}.jpg` : undefined;
+      manifest.renders[site.id] = { file, satellite: sat, generatedAt: new Date().toISOString() };
+      recovered++;
+    }
+  }
+  if (recovered) manifest.model = manifest.model ?? MODEL;
+  saveManifest(manifest);
+  process.stdout.write(`recovered ${recovered} existing render(s) into the manifest\n`);
+
   if (!process.env.OPENAI_API_KEY) {
-    process.stdout.write("No OPENAI_API_KEY in .env.local. Skipping render generation.\n");
+    process.stdout.write("No OPENAI_API_KEY in .env.local. Manifest rebuilt; skipping generation.\n");
     return;
   }
   const openai = new OpenAI();
-  const snap = JSON.parse(readFileSync(join(process.cwd(), "data", "sites.snapshot.json"), "utf8"));
-  const sites: ScoredSite[] = snap.sites;
-
-  const renderDir = join(process.cwd(), "public", "renders");
-  const satDir = join(process.cwd(), "public", "satellite");
-  mkdirSync(renderDir, { recursive: true });
-  mkdirSync(satDir, { recursive: true });
-
-  const manifestPath = join(process.cwd(), "data", "renders.json");
-  const manifest = existsSync(manifestPath)
-    ? JSON.parse(readFileSync(manifestPath, "utf8"))
-    : { generatedAt: null, model: null, renders: {} };
 
   let done = 0;
   for (const site of sites) {
     if (done >= LIMIT) break;
-    const outFile = `${site.id}.webp`;
-    const outPath = join(renderDir, outFile);
-    if (existsSync(outPath) && !FORCE) {
-      process.stdout.write(`  skip ${site.name} (cached)\n`);
-      continue;
-    }
+    if (existingRender(site.id) && !FORCE) continue;
 
     try {
-      // 1. Real satellite still (public domain NAIP).
       const res = await fetch(naipUrl(site.lat, site.lng), { headers: { "User-Agent": "GridSight/0.1" } });
       if (!res.ok) throw new Error(`NAIP ${res.status}`);
       const satBuf = Buffer.from(await res.arrayBuffer());
-      const satFile = `${site.id}.jpg`;
-      writeFileSync(join(satDir, satFile), satBuf);
+      writeFileSync(join(SAT_DIR, `${site.id}.jpg`), satBuf);
 
-      // 2. Concept render onto the real parcel.
       const bp = computeBlueprint(site, defaultParams(site));
       const image = await toFile(satBuf, "satellite.jpg", { type: "image/jpeg" });
       const gen = await openai.images.edit({
@@ -80,27 +104,27 @@ async function main() {
         prompt: renderPrompt(site, bp),
         size: "1536x1024",
         quality: QUALITY,
-        output_format: "webp",
+        output_format: "jpeg",
       } as any);
       const b64 = gen.data?.[0]?.b64_json;
       if (!b64) throw new Error("no image returned");
-      writeFileSync(outPath, Buffer.from(b64, "base64"));
 
-      manifest.renders[site.id] = { file: outFile, satellite: satFile, generatedAt: new Date().toISOString() };
+      const file = `${site.id}.jpg`;
+      writeFileSync(join(RENDER_DIR, file), Buffer.from(b64, "base64"));
+      manifest.renders[site.id] = { file, satellite: `${site.id}.jpg`, generatedAt: new Date().toISOString() };
       manifest.model = MODEL;
+      saveManifest(manifest); // incremental: safe to interrupt
       done++;
       process.stdout.write(`  ✓ ${site.name} (${done})\n`);
-
-      // Tier-1 image rate limit is ~5/min; throttle.
-      await new Promise((r) => setTimeout(r, 12000));
+      await new Promise((r) => setTimeout(r, THROTTLE_MS));
     } catch (e: any) {
       process.stdout.write(`  ! ${site.name} — ${e?.message ?? e}\n`);
+      // On a rate-limit, wait and continue.
+      if (/429|rate/i.test(String(e?.message))) await new Promise((r) => setTimeout(r, 30000));
     }
   }
 
-  manifest.generatedAt = new Date().toISOString();
-  writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
-  process.stdout.write(`\n✔ ${done} renders written to public/renders (model ${MODEL}, ${QUALITY})\n`);
+  process.stdout.write(`\n✔ ${done} new render(s); ${Object.keys(manifest.renders).length} total (model ${MODEL}, ${QUALITY})\n`);
 }
 
 main();
