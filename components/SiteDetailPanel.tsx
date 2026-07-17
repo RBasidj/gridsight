@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { composite, scoreColor, type ScoredSite } from "@/lib/scoring";
 import { getBrief } from "@/lib/briefs";
 import { useApp } from "@/lib/store";
@@ -127,6 +128,12 @@ export default function SiteDetailPanel({ site, onClose }: { site: ScoredSite; o
 
       <Block title="Possible cluster footprint">
         <FootprintSchematic site={site} />
+        <Link
+          href={`/studio?site=${site.id}`}
+          className="mt-3 block border border-rule-strong px-3 py-2 text-center text-sm text-ink hover:bg-paper-sunken"
+        >
+          Size a build for this site in the Studio
+        </Link>
       </Block>
 
       <section className="sheet p-4">
