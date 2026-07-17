@@ -2,7 +2,7 @@
 
 Site suitability scoring for GPU data-center buildout in Texas and New York.
 
-GridSight takes a set of candidate parcels, scores each one on the seven things that decide whether a large GPU cluster can get powered and built, and puts them on a map you can re-rank by changing how much each factor counts. It is scoped to the two states where Fluidstack is building for Anthropic through 2026 (Texas on ERCOT, New York on NYISO), so the sample is close to a real search rather than a generic one.
+GridSight takes a set of candidate parcels, scores each one on seven factors that weigh on whether a GPU cluster can get powered and built, and puts them on a map you can re-rank by changing how much each factor counts. From a shortlisted site, the Blueprint Studio sizes a concept build against the real numbers: load, cooling, footprint, power draw, cost, and a render on the parcel's own satellite image. It is scoped to Texas (ERCOT) and New York (NYISO), the two states where Fluidstack is building for Anthropic through 2026.
 
 Most of the scoring inputs come from public government datasets. The pieces with no free parcel-level feed are labeled estimates, and every figure in the app carries a small colored square showing how it was sourced.
 

@@ -19,7 +19,7 @@ function prompt(site: ScoredSite): string {
     `Write a short screening note (120 to 170 words, three plain paragraphs, no headings or bullet points) for a team weighing this parcel for a GPU data center.`,
     `Paragraph one: the site's stronger points. Paragraph two: the real risks. Paragraph three: one line on whether to advance it.`,
     `Write like an analyst jotting a note to a colleague. Be specific and use the numbers. Do not invent facts beyond the data, and say when a figure is an estimate rather than measured.`,
-    `Style rules: no em dashes. Do not use the words seamless, robust, standout, leverage, unlock, or the phrases "bottom line", "at a glance", or "worth noting". Avoid absolutes like every, always, never, and zero. Vary sentence length. Do not oversell.`,
+    `Style rules: no em dashes. Do not use the words seamless, robust, standout, leverage, unlock, or the phrases "bottom line", "at a glance", or "worth noting". Avoid absolutes like every, always, never, and zero, and avoid superlatives and hype (best, strongest, world-class, unmatched). Understate rather than oversell. Vary sentence length.`,
     ``,
     `SITE: ${site.name}, ${site.county} County, ${site.state} (${site.iso})`,
     `Composite score: ${site.composite}/100`,

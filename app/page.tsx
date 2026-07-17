@@ -17,18 +17,18 @@ export default function Home() {
           Where would a GPU cluster actually get built?
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-ink-muted">
-          GridSight ranks candidate parcels in Texas and New York for large GPU data-center buildout. It scores each
-          site on the seven things that decide whether a cluster can get powered and stood up: grid interconnection,
-          land, connectivity, cooling, hazard exposure, incentives, and construction labor. Change how much any factor
-          counts and the ranking moves with you. The sample covers the two states where Fluidstack is building for
-          Anthropic through 2026.
+          GridSight ranks candidate parcels in Texas and New York for GPU data-center development. It scores each site
+          across seven factors that weigh on whether a cluster can get powered and built: grid interconnection, land,
+          connectivity, cooling, hazard exposure, incentives, and construction labor. Change how much any factor counts
+          and the ranking updates. From a shortlisted site you can open the Studio and size an actual build against it.
+          The sample covers the two states where Fluidstack is building for Anthropic through 2026.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Link href="/map" className="bg-forest px-5 py-2.5 text-sm font-medium text-paper-raised hover:bg-forest-soft">
             Open the map
           </Link>
-          <Link href="/compare" className="border border-rule-strong px-5 py-2.5 text-sm font-medium text-ink hover:bg-paper-sunken">
-            Compare sites
+          <Link href="/studio" className="border border-rule-strong px-5 py-2.5 text-sm font-medium text-ink hover:bg-paper-sunken">
+            Open the Studio
           </Link>
         </div>
       </section>
