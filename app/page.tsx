@@ -14,7 +14,7 @@ export default function Home() {
       <section className="max-w-3xl">
         <p className="eyebrow mb-3">Texas · ERCOT / New York · NYISO</p>
         <h1 className="font-display text-4xl font-bold leading-tight text-ink sm:text-5xl">
-          Where would a GPU cluster actually get built?
+          Where should I build my GPU cluster?
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-ink-muted">
           GridSight ranks candidate parcels in Texas and New York for GPU data-center development. It scores each site
