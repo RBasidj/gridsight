@@ -92,6 +92,20 @@ npm run briefs    # rewrites data/briefs.snapshot.json
 
 `npm run briefs` uses Claude if `ANTHROPIC_API_KEY` is set in `.env.local`, and falls back to a deterministic templated brief otherwise. Keys are only read by these build scripts and never ship to the client.
 
+## Deploying
+
+`npm run build` writes a static site to `out/`, so it can go on any static host.
+
+- Vercel or Netlify: point it at the repo and accept the defaults.
+- GitHub Pages (project site under `/<repo>`): build with the sub-path set, then publish `out/`.
+
+  ```bash
+  NEXT_PUBLIC_BASE_PATH=/gridsight npm run build
+  touch out/.nojekyll
+  ```
+
+There is nothing to configure on the host: no environment variables, no server, no database.
+
 ## Attribution, and what was left out
 
 The shape of this pipeline (public data into a weighted score into a map and a short write-up) follows the "OpenClaw Reroof" lead-generation guide, repointed from rooftop solar leads to industrial land for compute.
