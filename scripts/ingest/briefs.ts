@@ -7,6 +7,9 @@ import { join } from "node:path";
 import Anthropic from "@anthropic-ai/sdk";
 import { templatedBrief } from "../../lib/brief";
 import type { ScoredSite } from "../../lib/scoring";
+import { loadEnvLocal } from "./util";
+
+loadEnvLocal();
 
 const MODEL = process.env.ANTHROPIC_MODEL || "claude-sonnet-5";
 

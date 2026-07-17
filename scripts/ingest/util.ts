@@ -1,4 +1,25 @@
 // Shared helpers for the ingestion pipeline.
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
+/** Load KEY=VALUE lines from .env.local into process.env (no dependency). */
+export function loadEnvLocal(): void {
+  try {
+    const raw = readFileSync(join(process.cwd(), ".env.local"), "utf8");
+    for (const line of raw.split("\n")) {
+      const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*)\s*$/);
+      if (!m) continue;
+      const key = m[1];
+      let val = m[2].trim();
+      if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+        val = val.slice(1, -1);
+      }
+      if (!(key in process.env)) process.env[key] = val;
+    }
+  } catch {
+    // no .env.local; that's fine
+  }
+}
 
 export async function getJSON(url: string, timeoutMs = 15000): Promise<any> {
   const ctrl = new AbortController();
