@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T20:38:35.869Z",
+  "generatedAt": "2026-07-20T14:08:39.228Z",
   "model": "gpt-image-2",
   "renders": {
     "ny-stlawrence-massena": {
@@ -16,6 +16,156 @@
       "file": "ny-oneida-marcy.webp",
       "satellite": "ny-oneida-marcy.jpg",
       "generatedAt": "2026-07-17T20:38:35.869Z"
+    },
+    "tx-williamson-taylor": {
+      "file": "tx-williamson-taylor.jpg",
+      "satellite": "tx-williamson-taylor.jpg",
+      "generatedAt": "2026-07-17T20:40:46.013Z"
+    },
+    "tx-milam-sandow": {
+      "file": "tx-milam-sandow.jpg",
+      "satellite": "tx-milam-sandow.jpg",
+      "generatedAt": "2026-07-17T20:41:37.010Z"
+    },
+    "ny-erie-lackawanna": {
+      "file": "ny-erie-lackawanna.jpg",
+      "satellite": "ny-erie-lackawanna.jpg",
+      "generatedAt": "2026-07-17T20:42:25.435Z"
+    },
+    "ny-onondaga-clay": {
+      "file": "ny-onondaga-clay.jpg",
+      "satellite": "ny-onondaga-clay.jpg",
+      "generatedAt": "2026-07-17T20:43:14.698Z"
+    },
+    "ny-niagara-falls": {
+      "file": "ny-niagara-falls.jpg",
+      "satellite": "ny-niagara-falls.jpg",
+      "generatedAt": "2026-07-17T20:44:10.701Z"
+    },
+    "ny-montgomery-amsterdam": {
+      "file": "ny-montgomery-amsterdam.jpg",
+      "satellite": "ny-montgomery-amsterdam.jpg",
+      "generatedAt": "2026-07-17T20:45:02.867Z"
+    },
+    "ny-rensselaer-greenbush": {
+      "file": "ny-rensselaer-greenbush.jpg",
+      "satellite": "ny-rensselaer-greenbush.jpg",
+      "generatedAt": "2026-07-17T20:45:56.516Z"
+    },
+    "ny-monroe-rochester": {
+      "file": "ny-monroe-rochester.jpg",
+      "satellite": "ny-monroe-rochester.jpg",
+      "generatedAt": "2026-07-17T20:46:46.754Z"
+    },
+    "ny-dutchess-poughkeepsie": {
+      "file": "ny-dutchess-poughkeepsie.jpg",
+      "satellite": "ny-dutchess-poughkeepsie.jpg",
+      "generatedAt": "2026-07-17T20:47:40.399Z"
+    },
+    "ny-chautauqua-dunkirk": {
+      "file": "ny-chautauqua-dunkirk.jpg",
+      "satellite": "ny-chautauqua-dunkirk.jpg",
+      "generatedAt": "2026-07-17T20:48:33.939Z"
+    },
+    "ny-franklin-malone": {
+      "file": "ny-franklin-malone.jpg",
+      "satellite": "ny-franklin-malone.jpg",
+      "generatedAt": "2026-07-17T20:49:24.462Z"
+    },
+    "ny-saratoga-malta": {
+      "file": "ny-saratoga-malta.jpg",
+      "satellite": "ny-saratoga-malta.jpg",
+      "generatedAt": "2026-07-17T20:50:16.240Z"
+    },
+    "tx-tarrant-alliance": {
+      "file": "tx-tarrant-alliance.jpg",
+      "satellite": "tx-tarrant-alliance.jpg",
+      "generatedAt": "2026-07-17T20:51:10.308Z"
+    },
+    "tx-mclennan-waco": {
+      "file": "tx-mclennan-waco.jpg",
+      "satellite": "tx-mclennan-waco.jpg",
+      "generatedAt": "2026-07-17T20:52:00.882Z"
+    },
+    "tx-ellis-ennis": {
+      "file": "tx-ellis-ennis.jpg",
+      "satellite": "tx-ellis-ennis.jpg",
+      "generatedAt": "2026-07-17T20:53:00.849Z"
+    },
+    "tx-dallas-lancaster": {
+      "file": "tx-dallas-lancaster.jpg",
+      "satellite": "tx-dallas-lancaster.jpg",
+      "generatedAt": "2026-07-17T20:53:52.432Z"
+    },
+    "tx-nueces-corpus": {
+      "file": "tx-nueces-corpus.jpg",
+      "satellite": "tx-nueces-corpus.jpg",
+      "generatedAt": "2026-07-17T21:10:52.367Z"
+    },
+    "tx-johnson-cleburne": {
+      "file": "tx-johnson-cleburne.jpg",
+      "satellite": "tx-johnson-cleburne.jpg",
+      "generatedAt": "2026-07-17T21:11:41.791Z"
+    },
+    "tx-grayson-sherman": {
+      "file": "tx-grayson-sherman.jpg",
+      "satellite": "tx-grayson-sherman.jpg",
+      "generatedAt": "2026-07-17T21:12:34.006Z"
+    },
+    "tx-harris-katy": {
+      "file": "tx-harris-katy.jpg",
+      "satellite": "tx-harris-katy.jpg",
+      "generatedAt": "2026-07-17T21:13:27.949Z"
+    },
+    "tx-denton-north": {
+      "file": "tx-denton-north.jpg",
+      "satellite": "tx-denton-north.jpg",
+      "generatedAt": "2026-07-17T21:14:17.751Z"
+    },
+    "tx-hays-sanmarcos": {
+      "file": "tx-hays-sanmarcos.jpg",
+      "satellite": "tx-hays-sanmarcos.jpg",
+      "generatedAt": "2026-07-17T21:15:45.488Z"
+    },
+    "ny-orange-montgomery": {
+      "file": "ny-orange-montgomery.jpg",
+      "satellite": "ny-orange-montgomery.jpg",
+      "generatedAt": "2026-07-17T21:32:13.582Z"
+    },
+    "tx-hood-comanche": {
+      "file": "tx-hood-comanche.jpg",
+      "satellite": "tx-hood-comanche.jpg",
+      "generatedAt": "2026-07-17T21:33:25.863Z"
+    },
+    "tx-wise-decatur": {
+      "file": "tx-wise-decatur.jpg",
+      "satellite": "tx-wise-decatur.jpg",
+      "generatedAt": "2026-07-17T22:48:28.383Z"
+    },
+    "tx-bastrop-austin": {
+      "file": "tx-bastrop-austin.jpg",
+      "satellite": "tx-bastrop-austin.jpg",
+      "generatedAt": "2026-07-17T22:49:28.485Z"
+    },
+    "tx-fortbend-rosenberg": {
+      "file": "tx-fortbend-rosenberg.jpg",
+      "satellite": "tx-fortbend-rosenberg.jpg",
+      "generatedAt": "2026-07-17T22:50:21.538Z"
+    },
+    "tx-freestone-fairfield": {
+      "file": "tx-freestone-fairfield.jpg",
+      "satellite": "tx-freestone-fairfield.jpg",
+      "generatedAt": "2026-07-17T22:51:37.546Z"
+    },
+    "tx-wharton-elcampo": {
+      "file": "tx-wharton-elcampo.jpg",
+      "satellite": "tx-wharton-elcampo.jpg",
+      "generatedAt": "2026-07-17T22:52:27.097Z"
+    },
+    "tx-bell-temple": {
+      "file": "tx-bell-temple.jpg",
+      "satellite": "tx-bell-temple.jpg",
+      "generatedAt": "2026-07-20T14:08:39.227Z"
     }
   }
 }
